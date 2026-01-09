@@ -4,79 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
+        * { box-sizing: border-box; }
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            overflow-x: hidden; /* لمنع أي اهتزاز في الصفحة */
-        }
-
-        .content-wrapper {
-            text-align: center;
-            width: 95%;
-            margin-top: 3vh; /* رفع المحتوى للأعلى قليلاً */
-        }
-
-        .logo-m {
-            /* تضخيم الحرف وتغيير الخط لبلقيس */
-            font-size: 210px; 
+            min-height: 100vh;
             font-family: 'Amiri', serif;
+        }
+
+        .main-container {
+            text-align: center;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .m-brand {
+            /* حجم ضخم جداً ولون أحمر ساطع صريح */
+            font-size: 220px; 
             font-style: italic;
-            color: #ff0000; /* أحمر ساطع */
-            line-height: 0.85;
+            color: #FF0000;
+            line-height: 0.8;
             margin: 0;
+            padding: 0;
             display: block;
-            /* إضافة عمق لوني بسيط */
-            background: linear-gradient(to bottom, #ff3333, #ff0000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 700;
         }
 
         h1 {
-            font-family: 'Montserrat', sans-serif;
-            color: #1e293b;
-            font-size: 26px;
-            margin: 5px 0 15px 0;
-            letter-spacing: 7px;
+            font-family: sans-serif;
+            color: #1a202c;
+            font-size: 28px;
+            margin: 10px 0;
+            letter-spacing: 6px;
             font-weight: 900;
         }
 
         p {
-            /* خط بلقيس للنص الوصفي */
-            font-family: 'Amiri', serif;
+            color: #4a5568;
+            font-size: 22px;
+            margin: 10px 0 40px 0;
             font-style: italic;
-            color: #64748b;
-            font-size: 24px;
-            margin-bottom: 40px;
         }
 
-        .btn-main {
-            font-family: sans-serif;
-            background: #ff0000;
+        .cta-button {
+            background-color: #FF0000;
             color: #ffffff;
-            padding: 16px 60px;
+            padding: 18px 60px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 19px;
+            font-size: 20px;
             display: inline-block;
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+            font-family: sans-serif;
         }
     </style>
 </head>
 <body>
 
-    <div class="content-wrapper">
-        <div class="logo-m">M</div>
+    <div class="main-container">
+        <div class="m-brand">M</div>
         <h1>GLOBAL</h1>
         <p>لا تدفع لنا حتى تبيع!</p>
-        <a href="#" class="btn-main">ابدأ الآن</a>
+        <a href="#" class="cta-button">ابدأ الآن</a>
     </div>
 
 </body>
