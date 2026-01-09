@@ -3,96 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M Global - المستقبل بين يديك</title>
+    <title>M Global</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* خلفية متدرجة فخمة تناسب هوية M Global */
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            background-attachment: fixed;
+            /* خلفية بيضاء ناعمة جداً أو رمادي فاتح للغاية ليكون شفافاً */
+            background-color: #f8fafc; 
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            overflow: hidden;
+            font-family: sans-serif;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 40px 20px;
-            width: 85%;
-            max-width: 400px;
+        .glass-container {
+            /* هذا هو تأثير الزجاج الشفاف */
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 50px 30px;
             text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            width: 80%;
+            max-width: 350px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
 
-        .logo {
-            font-size: 80px;
+        .logo-m {
+            font-size: 100px;
             font-weight: bold;
             background: linear-gradient(to bottom, #ffd700, #b8860b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            color: #334155;
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
         p {
+            color: #64748b;
             font-size: 16px;
-            color: #cbd5e1;
-            line-height: 1.6;
             margin-bottom: 30px;
         }
 
-        .btn-gold {
-            background: linear-gradient(45deg, #ffd700, #daa520);
+        .btn-start {
+            background: #ffd700;
             color: #000;
-            padding: 15px 30px;
+            padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
-        }
-
-        .btn-gold:active {
-            transform: scale(0.95);
-        }
-
-        /* لمسة جمالية في الخلفية */
-        .circle {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 215, 0, 0.1);
-            filter: blur(50px);
-            border-radius: 50%;
-            z-index: -1;
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <div class="circle" style="top: 10%; left: 10%;"></div>
-    <div class="circle" style="bottom: 10%; right: 10%;"></div>
 
-    <div class="glass-card">
-        <div class="logo">M</div>
-        <h1>GLOBAL</h1>
-        <p>ابدأ تجارتك العالمية اليوم..<br><b>لا تدفع لنا حتى تبيع!</b></p>
-        <a href="#" class="btn-gold">إنشاء حساب جديد</a>
+    <div class="glass-container">
+        <div class="logo-m">M</div>
+        <h1>M GLOBAL</h1>
+        <p>لا تدفع لنا حتى تبيع!</p>
+        <a href="#" class="btn-start">ابدأ الآن</a>
     </div>
+
 </body>
 </html>
