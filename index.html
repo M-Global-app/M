@@ -1,49 +1,76 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            background: #ffffff;
+            padding: 0;
+            background-color: #ffffff;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            height: 100vh;
-            font-family: sans-serif;
+            font-family: 'Cairo', sans-serif;
+            overflow: hidden;
         }
-        .main {
+
+        .content-wrapper {
             text-align: center;
-            margin-top: 50px; /* رفعناه للأعلى */
+            width: 90%;
+            margin-top: 5vh; /* رفع الحرف للأعلى أكثر */
         }
-        .m-logo {
-            font-size: 150px;
+
+        .logo-m {
+            font-size: 110px; /* تصغير الحرف قليلاً للفخامة */
             font-weight: bold;
-            background: linear-gradient(#ffd700, #b8860b);
+            font-family: 'Aref Ruqaa', serif;
+            background: linear-gradient(to bottom, #ffd700, #b8860b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 0;
+            line-height: 1;
+            margin-bottom: 40px; /* زيادة المسافة تحت الحرف */
         }
-        h1 { font-size: 30px; color: #333; margin-top: -20px; letter-spacing: 5px; }
-        p { color: #666; font-size: 18px; margin-bottom: 30px; }
-        .btn {
-            background: #ffd700;
-            color: black;
-            padding: 15px 40px;
+
+        h1 {
+            color: #1e293b;
+            font-size: 28px;
+            margin-bottom: 20px; /* إنزال النصوص قليلاً */
+            letter-spacing: 6px;
+            font-weight: 800;
+        }
+
+        p {
+            color: #64748b;
+            font-size: 18px;
+            margin-bottom: 50px; /* زيادة المسافة قبل الزر */
+            font-weight: 500;
+        }
+
+        .btn-main {
+            background: linear-gradient(45deg, #ffd700, #daa520);
+            color: #000;
+            padding: 16px 55px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(218, 165, 32, 0.2);
         }
     </style>
 </head>
 <body>
-    <div class="main">
-        <div class="m-logo">M</div>
+
+    <div class="content-wrapper">
+        <div class="logo-m">M</div>
         <h1>GLOBAL</h1>
         <p>لا تدفع لنا حتى تبيع!</p>
-        <a href="#" class="btn">ابدأ الآن</a>
+        <a href="#" class="btn-main">ابدأ الآن</a>
     </div>
+
 </body>
 </html>
