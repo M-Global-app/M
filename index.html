@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
@@ -15,7 +15,7 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            font-family: 'Reem Kufi', sans-serif;
+            font-family: 'Amiri', serif;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -25,13 +25,14 @@
         .container {
             text-align: center;
             width: 100%;
-            padding-top: 7vh;
+            padding-top: 6vh;
         }
 
         .m-logo {
-            /* حرف M مستقيم، ضخم، أحمر ساطع، بخط هندسي فخم */
-            font-size: 150px; 
+            /* حرف M مستقيم بوزن ثقيل ولون أحمر ساطع */
+            font-size: 160px; 
             color: #FF0000;
+            font-style: normal; /* الغاء الميلان تماماً */
             line-height: 1;
             margin: 0;
             font-weight: 700;
@@ -39,41 +40,41 @@
         }
 
         .brand-name {
-            font-size: 34px;
+            /* GLOBAL بخط بلقيس مستقيم */
+            font-size: 38px;
             color: #1e293b;
+            font-style: normal;
             letter-spacing: 6px;
-            margin-top: 30px; /* المسافة المطلوبة لإنزال GLOBAL */
+            margin-top: 35px; /* إنزال الكلمة كما طلبت */
             font-weight: 700;
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.4s forwards;
         }
 
         .slogan {
-            font-size: 24px;
+            /* النص العربي بخط بلقيس مستقيم */
+            font-size: 28px;
             color: #64748b;
+            font-style: normal;
             margin: 40px 0;
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.8s forwards;
         }
 
         .btn {
+            /* الزر بخط بلقيس مستقيم وأحمر ساطع */
             background-color: #FF0000;
             color: #ffffff;
-            padding: 18px 70px;
+            padding: 16px 70px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
+            font-style: normal;
             display: inline-block;
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
             opacity: 0;
             animation: fadeIn 1.2s ease-out 1.2s forwards;
-            transition: 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            background-color: #d40000;
         }
     </style>
 </head>
