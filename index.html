@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        /* تأثير الظهور التدريجي */
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -16,79 +15,15 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            font-family: 'Amiri', serif; /* خط بلقيس الأساسي */
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            /* تطبيق خط بلقيس على كل شيء في الصفحة */
-            font-family: 'Amiri', serif;
             overflow-x: hidden;
         }
 
         .container {
             text-align: center;
             width: 100%;
-            padding-top: 8vh;
-        }
-
-        .m-logo {
-            /* حرف M باللون الأحمر الساطع وخط بلقيس المائل */
-            font-size: 130px; 
-            color: #FF0000;
-            font-style: italic;
-            line-height: 1;
-            margin: 0;
-            animation: fadeIn 1.2s ease-out forwards;
-        }
-
-        .brand-name {
-            /* تطبيق خط بلقيس على GLOBAL كما طلبت */
-            font-size: 32px;
-            color: #1e293b;
-            letter-spacing: 5px;
-            margin-top: 35px; /* المسافة المطلوبة لإنزال الكلمة */
-            font-weight: bold;
-            font-style: italic;
-            opacity: 0;
-            animation: fadeIn 1.2s ease-out 0.4s forwards;
-        }
-
-        .slogan {
-            /* تطبيق خط بلقيس على الشعار */
-            font-size: 24px;
-            color: #64748b;
-            font-style: italic;
-            margin: 40px 0;
-            opacity: 0;
-            animation: fadeIn 1.2s ease-out 0.8s forwards;
-        }
-
-        .btn {
-            /* تطبيق خط بلقيس على كلمة ابدأ الآن */
-            font-family: 'Amiri', serif;
-            font-style: italic;
-            background-color: #FF0000;
-            color: #ffffff;
-            padding: 15px 65px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 24px;
-            display: inline-block;
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
-            opacity: 0;
-            animation: fadeIn 1.2s ease-out 1.2s forwards;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="m-logo">M</div>
-        <div class="brand-name">GLOBAL</div>
-        <p class="slogan">لا تدفع لنا حتى تبيع!</p>
-        <a href="#" class="btn">ابدأ الآن</a>
-    </div>
-
-</body>
-</html>
+            padding-top
