@@ -6,53 +6,51 @@
     <title>M Global</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; }
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
             font-family: 'Amiri', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .main-container {
+        .logo-section {
+            margin-top: 20px;
             text-align: center;
             width: 100%;
-            padding-top: 20px;
         }
 
-        .m-brand {
-            /* حجم ضخم جداً ولون أحمر ساطع صريح */
-            font-size: 220px; 
+        .giant-m {
+            /* تضخيم الحرف مع ضمان بقائه في مساحة الرؤية */
+            font-size: clamp(150px, 40vw, 250px); 
+            color: #FF0000; /* أحمر ساطع */
             font-style: italic;
-            color: #FF0000;
-            line-height: 0.8;
+            line-height: 1;
             margin: 0;
             padding: 0;
-            display: block;
-            font-weight: 700;
+            display: inline-block;
         }
 
-        h1 {
+        .brand-name {
             font-family: sans-serif;
-            color: #1a202c;
             font-size: 28px;
-            margin: 10px 0;
-            letter-spacing: 6px;
             font-weight: 900;
+            color: #1e293b;
+            letter-spacing: 8px;
+            margin-top: -20px; /* سحب الكلمة لتقترب من M */
         }
 
-        p {
-            color: #4a5568;
+        .slogan {
             font-size: 22px;
-            margin: 10px 0 40px 0;
+            color: #64748b;
             font-style: italic;
+            margin: 20px 0 40px 0;
         }
 
-        .cta-button {
+        .main-btn {
             background-color: #FF0000;
             color: #ffffff;
             padding: 18px 60px;
@@ -60,7 +58,6 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 20px;
-            display: inline-block;
             box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
             font-family: sans-serif;
         }
@@ -68,11 +65,11 @@
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="m-brand">M</div>
-        <h1>GLOBAL</h1>
-        <p>لا تدفع لنا حتى تبيع!</p>
-        <a href="#" class="cta-button">ابدأ الآن</a>
+    <div class="logo-section">
+        <div class="giant-m">M</div>
+        <div class="brand-name">GLOBAL</div>
+        <p class="slogan">لا تدفع لنا حتى تبيع!</p>
+        <a href="#" class="main-btn">ابدأ الآن</a>
     </div>
 
 </body>
