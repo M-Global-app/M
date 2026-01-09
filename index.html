@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&family=Montserrat:wght@900&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
-        /* أنيميشن الظهور التدريجي الهادئ */
+        /* تأثير الظهور التدريجي */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -20,6 +20,7 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            /* تطبيق خط بلقيس على كل شيء في الصفحة */
             font-family: 'Amiri', serif;
             overflow-x: hidden;
         }
@@ -27,12 +28,12 @@
         .container {
             text-align: center;
             width: 100%;
-            padding-top: 8vh; /* مسافة من أعلى الصفحة */
+            padding-top: 8vh;
         }
 
         .m-logo {
-            /* تصغير الحرف قليلاً لضمان الاستقرار */
-            font-size: 140px; 
+            /* حرف M باللون الأحمر الساطع وخط بلقيس المائل */
+            font-size: 130px; 
             color: #FF0000;
             font-style: italic;
             line-height: 1;
@@ -41,38 +42,42 @@
         }
 
         .brand-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
+            /* تطبيق خط بلقيس على GLOBAL كما طلبت */
+            font-size: 32px;
             color: #1e293b;
-            letter-spacing: 8px;
-            margin-top: 30px; /* إنزال كلمة قلوبال للمسافة المطلوبة */
-            font-weight: 900;
+            letter-spacing: 5px;
+            margin-top: 35px; /* المسافة المطلوبة لإنزال الكلمة */
+            font-weight: bold;
+            font-style: italic;
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.4s forwards;
         }
 
         .slogan {
-            font-family: 'Aref Ruqaa', serif;
-            font-size: 22px;
+            /* تطبيق خط بلقيس على الشعار */
+            font-size: 24px;
             color: #64748b;
+            font-style: italic;
             margin: 40px 0;
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.8s forwards;
         }
 
         .btn {
+            /* تطبيق خط بلقيس على كلمة ابدأ الآن */
+            font-family: 'Amiri', serif;
+            font-style: italic;
             background-color: #FF0000;
             color: #ffffff;
-            padding: 16px 60px;
+            padding: 15px 65px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 24px;
             display: inline-block;
             box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
             opacity: 0;
             animation: fadeIn 1.2s ease-out 1.2s forwards;
-            font-family: sans-serif;
         }
     </style>
 </head>
