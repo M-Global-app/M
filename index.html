@@ -8,68 +8,71 @@
         body {
             margin: 0;
             padding: 0;
-            /* خلفية بيضاء ناعمة جداً أو رمادي فاتح للغاية ليكون شفافاً */
-            background-color: #f8fafc; 
+            background-color: #ffffff; /* خلفية بيضاء صافية */
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
         }
 
-        .glass-container {
-            /* هذا هو تأثير الزجاج الشفاف */
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            padding: 50px 30px;
+        .content-wrapper {
             text-align: center;
-            width: 80%;
-            max-width: 350px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            width: 90%;
+            /* تمت إزالة الخلفية والحدود والمربع تماماً هنا */
         }
 
         .logo-m {
-            font-size: 100px;
+            font-size: 120px;
             font-weight: bold;
             background: linear-gradient(to bottom, #ffd700, #b8860b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            display: block;
         }
 
         h1 {
-            color: #334155;
-            font-size: 22px;
-            margin-bottom: 10px;
+            color: #1e293b;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
         }
 
         p {
             color: #64748b;
-            font-size: 16px;
-            margin-bottom: 30px;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 500;
         }
 
-        .btn-start {
-            background: #ffd700;
+        .btn-main {
+            background: linear-gradient(45deg, #ffd700, #daa520);
             color: #000;
-            padding: 15px 40px;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+            font-size: 20px;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-main:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
 
-    <div class="glass-container">
+    <div class="content-wrapper">
         <div class="logo-m">M</div>
         <h1>M GLOBAL</h1>
         <p>لا تدفع لنا حتى تبيع!</p>
-        <a href="#" class="btn-start">ابدأ الآن</a>
+        <a href="#" class="btn-main">ابدأ الآن</a>
     </div>
 
 </body>
