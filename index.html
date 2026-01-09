@@ -15,7 +15,8 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            font-family: 'Amiri', serif;
+            /* فرض الخط على كامل الصفحة */
+            font-family: 'Amiri', serif !important;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -29,48 +30,45 @@
         }
 
         .m-logo {
-            /* حرف M مستقيم بوزن ثقيل ولون أحمر ساطع */
+            /* ضمان تطبيق بلقيس على حرف M مع الاستقامة */
+            font-family: 'Amiri', serif !important;
             font-size: 160px; 
             color: #FF0000;
-            font-style: normal; /* الغاء الميلان تماماً */
+            font-style: normal !important;
             line-height: 1;
             margin: 0;
             font-weight: 700;
+            display: block;
             animation: fadeIn 1.2s ease-out forwards;
         }
 
         .brand-name {
-            /* GLOBAL بخط بلقيس مستقيم */
-            font-size: 38px;
+            font-size: 42px;
             color: #1e293b;
             font-style: normal;
-            letter-spacing: 6px;
-            margin-top: 35px; /* إنزال الكلمة كما طلبت */
+            letter-spacing: 5px;
+            margin-top: 25px; 
             font-weight: 700;
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.4s forwards;
         }
 
         .slogan {
-            /* النص العربي بخط بلقيس مستقيم */
             font-size: 28px;
             color: #64748b;
-            font-style: normal;
-            margin: 40px 0;
+            margin: 35px 0;
             opacity: 0;
             animation: fadeIn 1.2s ease-out 0.8s forwards;
         }
 
         .btn {
-            /* الزر بخط بلقيس مستقيم وأحمر ساطع */
             background-color: #FF0000;
             color: #ffffff;
-            padding: 16px 70px;
+            padding: 16px 75px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
-            font-style: normal;
             display: inline-block;
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
             opacity: 0;
