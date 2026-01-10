@@ -9,3 +9,91 @@
         body { margin: 0; padding: 0; background: #fff; font-family: 'Alegreya', serif; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; color: #1e293b; }
         .container { text-align: center; width: 90%; max-width: 450px; padding-top: 5vh; position: relative; }
         .mini-logo { font-size: 60px; color: #f00; font-weight: 900; font-style: italic; text-decoration: none; display: block; margin-bottom: 20px; }
+        
+        .tab-container { display: flex; justify-content: center; margin-bottom: 30px; border-bottom: 2px solid #e2e8f0; }
+        .tab { padding: 10px 20px; cursor: pointer; font-size: 19px; font-weight: 700; color: #64748b; flex: 1; transition: 0.2s; }
+        .tab.active { color: #f00; border-bottom: 3px solid #f00; }
+
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+
+        .form-group { text-align: right; margin-bottom: 18px; }
+        label { display: block; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        input { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 12px; font-family: 'Alegreya', serif; font-size: 18px; box-sizing: border-box; }
+        input:focus { border-color: #f00; outline: none; }
+
+        /* ستايل خانة تذكرني */
+        .remember-me { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: #64748b; margin-top: -10px; margin-bottom: 20px; }
+        .remember-me input { width: 18px; height: 18px; cursor: pointer; }
+
+        .btn-submit { background: #f00; color: #fff; width: 100%; padding: 18px; border: none; border-radius: 50px; font-size: 22px; font-weight: 700; cursor: pointer; margin-top: 10px; font-family: 'Alegreya', serif; }
+        
+        /* رسالة النجاح */
+        #success-message { display: none; background: #f8fafc; border: 2px solid #f00; border-radius: 20px; padding: 30px; margin-top: 20px; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .back-link { display: inline-block; margin-top: 25px; color: #64748b; text-decoration: none; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="mini-logo">M</a>
+        
+        <div id="main-content">
+            <div class="tab-container">
+                <div id="tab-login" class="tab active" onclick="switchTab('login')">تسجيل الدخول</div>
+                <div id="tab-register" class="tab" onclick="switchTab('register')">إنشاء حساب</div>
+            </div>
+
+            <div id="login-section" class="form-section active">
+                <h1 style="font-size: 24px; margin-bottom: 25px;">مرحباً بعودتك شريكنا</h1>
+                <div class="form-group"><label>البريد الإلكتروني أو الهاتف</label><input type="text" placeholder="بيانات الدخول"></div>
+                <div class="form-group"><label>كلمة المرور</label><input type="password" placeholder="••••••••"></div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember" style="display:inline; margin:0;">تذكرني</label>
+                </div>
+                <button type="button" class="btn-submit">دخول للمتجر</button>
+            </div>
+
+            <div id="register-section" class="form-section">
+                <h1 style="font-size: 24px; margin-bottom: 25px;">أنشئ متجرك الآن.. مجاناً</h1>
+                <div class="form-group"><label>اسم المتجر</label><input type="text" placeholder="متجر الأناقة"></div>
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="name@example.com"></div>
+                <div class="form-group"><label>رقم الهاتف</label><input type="tel" placeholder="05xxxxxxxx"></div>
+                <button type="button" class="btn-submit" onclick="showSuccess()">ابدأ رحلتك العالمية</button>
+            </div>
+        </div>
+
+        <div id="success-message">
+            <h2 style="color: #f00; font-size: 28px; margin-bottom: 15px;">M Global</h2>
+            <p style="font-size: 20px; font-weight: 700;">جاري تجهيز إمبراطوريتك..</p>
+            <p style="color: #64748b;">ستصلك رسالة التفعيل قريباً على هاتفك.</p>
+        </div>
+
+        <a href="index.html" class="back-link">← العودة للرئيسية</a>
+    </div>
+
+    <script>
+        function switchTab(type) {
+            document.getElementById('login-section').classList.remove('active');
+            document.getElementById('register-section').classList.remove('active');
+            document.getElementById('tab-login').classList.remove('active');
+            document.getElementById('tab-register').classList.remove('active');
+
+            if(type === 'login') {
+                document.getElementById('login-section').classList.add('active');
+                document.getElementById('tab-login').classList.add('active');
+            } else {
+                document.getElementById('register-section').classList.add('active');
+                document.getElementById('tab-register').classList.add('active');
+            }
+        }
+
+        function showSuccess() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
