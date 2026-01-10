@@ -69,18 +69,17 @@
             margin-bottom: 10px;
         }
 
-        /* تنسيق الجملة الجديدة والمطولة */
-        .promise-box {
-            margin: 25px auto 40px auto;
-            max-width: 80%;
+        /* تنسيق الجملة الرابعة المختار */
+        .investment-promise {
+            margin: 35px 0 50px 0;
             animation-delay: 1.8s;
         }
 
         .highlight-red {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 32px; /* صغرنا الخط قليلاً لتناسب طول الجملة */
+            font-size: 38px;
             color: #FF0000;
-            line-height: 1.4;
+            line-height: 1.3;
             display: block;
         }
 
@@ -88,20 +87,20 @@
             background-color: #FF0000;
             color: #ffffff;
             padding: 18px 65px;
-            border-radius: 8px; 
+            border-radius: 8px; /* الزوايا شبه الحادة التي اعتمدناها */
             text-decoration: none;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 22px;
             display: inline-block;
             box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
             font-family: 'Cairo', sans-serif;
             animation-delay: 2.1s;
-            transition: 0.3s;
+            transition: 0.4s ease;
         }
 
         .btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -118,11 +117,8 @@
                 <div class="animate line-3">بكل سهولة ويسر</div>
             </div>
             
-            <div class="promise-box animate">
-                <span class="highlight-red">
-                    حين تربح أنت.. سنربح نحن<br>
-                    وإذا لم تربح، لن نأخذ منك شيئاً
-                </span>
+            <div class="investment-promise animate">
+                <span class="highlight-red">نحنُ نستثمر فيك..<br>نربحُ معك أو لا نربح</span>
             </div>
         </div>
 
