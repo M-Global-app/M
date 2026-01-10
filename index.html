@@ -3,29 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M Global | بوابتك للتجارة العالمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+    <title>M Global | النخبة العالمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-red: #ff0000;
-            --dark-blue: #0f172a;
-            --light-gray: #f8fafc;
-            --gray-text: #64748b;
+            --m-red: #ff0000;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --soft-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
         }
 
-        body { 
-            margin: 0; padding: 0; background: #fff; 
-            font-family: 'Alegreya', serif; 
-            color: var(--dark-blue); 
+        body {
+            margin: 0; padding: 0;
+            background: radial-gradient(circle at top right, #ffffff 0%, #f0f2f5 100%);
+            font-family: 'Alegreya', serif;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex; flex-direction: column;
             overflow-x: hidden;
-            line-height: 1.6;
         }
 
-        /* الهيدر الهوائي */
-        header { 
-            padding: 20px 8%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur
+        /* الهيدر الزجاجي */
+        header {
+            padding: 20px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .brand {
+            display: flex; flex-direction: column; align-items: center;
+            text-decoration: none;
+        }
+
+        .brand-name {
+            font-size: 18px; font-weight: 900; color: var(--m-red);
+            letter-spacing: 4px; margin-top: -5px;
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            flex: 1;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        /* حاوية زجاجية للمحتوى */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 60px 40px;
+            border-radius: 40px;
+            box-shadow: var(--soft-shadow);
+            max-width: 800px;
+            animation: slideUp 1s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(35px, 6vw, 60px);
+            font-weight: 900; line-height: 1.2;
+            margin-bottom: 20px; color: #000;
+        }
+
+        p {
