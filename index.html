@@ -4,55 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        /* تعريف حركة الظهور من الأسفل للأعلى */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* أنيميشن الظهور */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
         body {
             margin: 0; padding: 0; background: #fff;
-            font-family: 'Alegreya', serif;
-            display: flex; justify-content: center; align-items: flex-start;
-            min-height: 100vh; color: #1e293b;
+            font-family: 'Alegreya', serif; color: #1e293b;
+            overflow-x: hidden;
         }
 
-        .container { text-align: center; width: 90%; max-width: 600px; padding-top: 5vh; }
-        
-        /* تطبيق الحركة على جميع العناصر وجعلها مخفية في البداية */
-        .m-logo, .brand, .headline, .offer, .subtext, .btn {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
+        .section { display: none; text-align: center; width: 90%; max-width: 600px; margin: 0 auto; padding-top: 5vh; }
+        .active { display: block; }
 
-        /* توقيت ظهور كل عنصر بالترتيب */
-        .m-logo { font-size: 160px; color: #f00; font-weight: 900; line-height: 0.8; margin: 0; animation-delay: 0.2s; }
-        .brand { font-size: 18px; letter-spacing: 9px; font-weight: 700; text-transform: uppercase; margin-top: 10px; animation-delay: 0.4s; }
+        /* تنسيق الواجهة الرئيسية (نفس النسخة التي أعجبتك) */
+        .m-logo { font-size: 155px; color: #f00; font-weight: 900; line-height: 0.8; margin: 0; font-style: italic; }
+        .brand { font-size: 18px; letter-spacing: 9px; font-weight: 700; margin-top: 10px; text-transform: uppercase; }
+        .headline { font-size: 25px; font-weight: 700; margin: 40px 0 10px; line-height: 1.4; }
+        .offer { font-size: 23px; color: #f00; font-weight: 700; margin-bottom: 15px; }
+        .subtext { font-size: 20px; color: #64748b; margin-bottom: 70px; }
         
-        .headline { font-size: 25px; font-weight: 700; margin: 40px 0 10px; line-height: 1.4; animation-delay: 0.7s; }
-        .offer { font-size: 23px; color: #f00; font-weight: 700; margin-bottom: 15px; animation-delay: 1.0s; }
-        .subtext { font-size: 20px; color: #64748b; margin-bottom: 80px; animation-delay: 1.3s; }
+        /* تنسيق صفحة التسجيل */
+        .form-group { text-align: right; margin-bottom: 20px; }
+        label { display: block; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        input { width: 100%; padding: 15px; border: 2px solid #e2e8f0; border-radius: 12px; font-family: 'Alegreya', serif; box-sizing: border-box; }
         
         .btn {
-            background: #f00; color: #fff; padding: 18px 95px; border-radius: 50px;
+            background: #f00; color: #fff; padding: 18px 90px; border-radius: 50px;
             text-decoration: none; font-size: 24px; font-weight: 700; display: inline-block;
-            box-shadow: 0 10px 25px rgba(255,0,0,0.25);
-            animation-delay: 1.6s; /* الزر يظهر في النهاية كخاتمة قوية */
+            border: none; cursor: pointer; box-shadow: 0 10px 25px rgba(255,0,0,0.2);
         }
+
+        /* حركات الظهور التدريجي */
+        .fade-in { opacity: 0; animation: fadeInUp 0.7s forwards; }
+        .d1 { animation-delay: 0.2s; } .d2 { animation-delay: 0.4s; } .d3 { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="m-logo">M</div>
-        <div class="brand">GLOBAL</div>
-        
-        <div class="headline">انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله</div>
-        <div class="offer">لا تدفع لنا حتى تبيع</div>
-        <div class="subtext">نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر</div>
-        
-        <a href="#" class="btn">ابدأ الآن</a>
+
+    <div id="home" class="section active">
+        <div class="m-logo fade-in d1">M</div>
+        <div class="brand fade-in d2">GLOBAL</div>
+        <div class="headline fade-in d3">انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله</div>
+        <div class="offer fade-in">لا تدفع لنا حتى تبيع</div>
+        <div class="subtext fade-in">نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر</div>
+        <button onclick="showSignup()" class="btn fade-in">ابدأ الآن</button>
     </div>
+
+    <div id="signup" class="section">
+        <div class="m-logo" style="font-size: 60px;">M</div>
+        <h2 class="headline">خطوة واحدة لتبدأ حلمك</h2>
+        <p class="offer" style="font-size: 18px;">لن تدفع شيئاً حتى تبيع</p>
+        <div style="max-width: 400px; margin: 0 auto;">
+            <div class="form-group"><label>اسم المتجر</label><input type="text"></div>
+            <div class="form-group"><label>البريد الإلكتروني</label><input type="email"></div>
+            <button class="btn" style="width: 100%;">أنشئ متجري الآن</button>
+        </div>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('signup').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+    </script>
+
 </body>
 </html>
