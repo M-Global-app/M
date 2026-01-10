@@ -2,71 +2,47 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M Global | النخبة العالمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;900&display=swap" rel="stylesheet">
+    <title>M Global | الإمبراطورية العالمية</title>
     <style>
-        :root {
-            --m-red: #ff0000;
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --soft-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-        }
-
         body {
-            margin: 0; padding: 0;
-            background: radial-gradient(circle at top right, #ffffff 0%, #f0f2f5 100%);
-            font-family: 'Alegreya', serif;
-            color: #1a1a1a;
-            min-height: 100vh;
-            display: flex; flex-direction: column;
-            overflow-x: hidden;
+            margin: 0; background: #ffffff; font-family: sans-serif;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            height: 100vh; text-align: center; color: #1a1a1a;
         }
-
-        /* الهيدر الزجاجي */
-        header {
-            padding: 20px 8%;
-            display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(15px);
-            background: rgba(255, 255, 255, 0.4);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            position: sticky; top: 0; z-index: 1000;
+        /* شعار M الفني الفخم */
+        .logo-box { margin-bottom: 20px; }
+        .m-art {
+            font-size: 120px; font-weight: 900; color: #ff0000;
+            font-style: italic; line-height: 1; letter-spacing: -5px;
         }
-
-        .brand {
-            display: flex; flex-direction: column; align-items: center;
-            text-decoration: none;
+        .global-text {
+            font-size: 20px; letter-spacing: 8px; color: #ff0000;
+            font-weight: bold; margin-top: -10px;
         }
-
-        .brand-name {
-            font-size: 18px; font-weight: 900; color: var(--m-red);
-            letter-spacing: 4px; margin-top: -5px;
+        h1 { font-size: 40px; margin: 20px 0; }
+        p { font-size: 20px; color: #666; max-width: 500px; margin-bottom: 40px; }
+        
+        /* زر الانطلاق */
+        .btn {
+            background: #ff0000; color: white; padding: 20px 50px;
+            text-decoration: none; border-radius: 50px; font-weight: bold;
+            font-size: 22px; box-shadow: 0 10px 20px rgba(255,0,0,0.2);
+            transition: 0.3s;
         }
+        .btn:hover { transform: scale(1.1); background: #cc0000; }
+    </style>
+</head>
+<body>
 
-        /* القسم الرئيسي */
-        .hero {
-            flex: 1;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center;
-            padding: 60px 5%;
-        }
+    <div class="logo-box">
+        <div class="m-art">M</div>
+        <div class="global-text">GLOBAL</div>
+    </div>
 
-        /* حاوية زجاجية للمحتوى */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            padding: 60px 40px;
-            border-radius: 40px;
-            box-shadow: var(--soft-shadow);
-            max-width: 800px;
-            animation: slideUp 1s ease-out;
-        }
+    <h1>بوابتك للتجارة العالمية</h1>
+    <p>المنصة التي تحول طموحك إلى واقع عابر للحدود.</p>
 
-        h1 {
-            font-size: clamp(35px, 6vw, 60px);
-            font-weight: 900; line-height: 1.2;
-            margin-bottom: 20px; color: #000;
-        }
+    <a href="signup.html" class="btn">ابدأ رحلتك الآن</a>
 
-        p {
+</body>
+</html>
