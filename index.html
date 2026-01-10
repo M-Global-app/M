@@ -16,24 +16,24 @@
             min-height: 100vh;
             font-family: 'Cairo', sans-serif;
             overflow-x: hidden;
-        }
+        } 
 
         .container {
             text-align: center;
             width: 95%;
             max-width: 450px;
-            padding-top: 3vh; /* تقليل بسيط للمساحة العلوية لتوفير مساحة للزرين */
-        }
+            padding-top: 3vh;
+        } 
 
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
-        }
+        } 
 
         .animate {
             opacity: 0;
             animation: fadeUp 0.8s ease forwards;
-        }
+        } 
 
         .logo-m {
             font-family: 'Aref Ruqaa', serif;
@@ -43,7 +43,7 @@
             margin: 0;
             display: block;
             animation-delay: 0.2s;
-        }
+        } 
 
         .brand-text {
             font-size: 20px;
@@ -53,90 +53,77 @@
             font-weight: 700;
             animation-delay: 0.4s;
             text-transform: uppercase;
-        }
+        } 
 
         .content-box {
             margin-top: 25px;
-        }
+        } 
 
         .main-text {
             font-size: 21px;
             color: #334155;
             line-height: 1.6;
             margin-bottom: 20px;
-        }
+        } 
 
         .partnership-promise {
-            <div class="partnership-promise animate">
-    <span class="highlight-red" style="color: #0f172a;">إذا ربحتَ <span style="color: #FF0000; text-decoration: underline; text-underline-offset: 8px;">أنتَ</span>..</span>
-    <span class="highlight-red" style="color: #0f172a;"><span style="color: #FF0000; text-decoration: underline; text-underline-offset: 8px;">نحنُ</span> نربح</span>
-</div>
+            margin: 15px 0 30px 0;
+            animation-delay: 1.5s;
+        } 
 
-
-        .highlight-red {
+        /* الجملة الأساسية باللون الأسود */
+        .highlight-black {
             font-family: 'Aref Ruqaa', serif;
             font-size: 36px; 
-            color: #FF0000;
+            color: #0f172a; /* لون أسود كحلي فخم */
             display: block;
             line-height: 1.3;
-        }
+        } 
 
-        .partner-text {
-            color: #0f172a;
+        /* الكلمات المستهدفة باللون الأحمر */
+        .partner-red {
+            color: #FF0000;
             text-decoration: underline;
-            text-underline-offset: 6px;
-            text-decoration-color: rgba(255, 0, 0, 0.4);
-        }
+            text-underline-offset: 8px;
+            text-decoration-color: rgba(255, 0, 0, 0.3);
+        } 
 
-        /* حاوية الأزرار لتكون تحت بعضها */
         .btn-group {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px; /* المسافة بين الزرين */
+            gap: 12px;
             animation-delay: 1.8s;
-        }
+        } 
 
         .btn {
-            width: 80%; /* توحيد العرض */
+            width: 80%;
             padding: 16px 0;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
             font-size: 20px;
             transition: 0.3s ease;
-        }
+        } 
 
-        /* زر ابدأ الآن (الأساسي) */
         .btn-primary {
             background-color: #FF0000;
             color: #ffffff;
             box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);
-        }
+        } 
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.25);
-        }
-
-        /* زر أسعارنا (الشفاف) */
         .btn-secondary {
             background-color: transparent;
             color: #FF0000;
             border: 2px solid #FF0000;
         }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 0, 0, 0.05);
-            transform: translateY(-2px);
-        }
     </style>
 </head>
-<body>
+<body> 
 
     <div class="container">
         <div class="logo-m animate">M</div>
-        <div class="brand-text animate">PRIME</div>
+        <div class="brand-text animate">PRIME</div> 
 
         <div class="content-box">
             <div class="main-text">
@@ -146,16 +133,16 @@
             </div>
             
             <div class="partnership-promise animate">
-                <span class="highlight-red">إذا ربحتَ <span class="partner-text">أنتَ</span>..</span>
-                <span class="highlight-red"><span class="partner-text">نحنُ</span> نربح</span>
+                <span class="highlight-black">إذا ربحتَ <span class="partner-red">أنتَ</span>..</span>
+                <span class="highlight-black"><span class="partner-red">نحنُ</span> نربح</span>
             </div>
-        </div>
+        </div> 
 
         <div class="btn-group animate">
-            <a href="#" class="btn btn-primary">ابدأ الآن مجاناً</a>
+            <a href="register.html" class="btn btn-primary">ابدأ الآن مجاناً</a>
             <a href="pricing.html" class="btn btn-secondary">أسعارنا</a>
         </div>
-    </div>
+    </div> 
 
 </body>
 </html>
