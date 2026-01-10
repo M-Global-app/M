@@ -20,11 +20,11 @@
         .container {
             text-align: center;
             width: 100%;
-            padding-top: 5vh;
+            /* قمنا بتقليل المسافة من 5vh إلى 2vh لرفع الحرف للأعلى */
+            padding-top: 2vh; 
         }
 
         .logo-m {
-            /* حرف M ضخم جداً بخط مزخرف (Aref Ruqaa) */
             font-family: 'Aref Ruqaa', serif;
             font-size: 200px; 
             color: #FF0000;
@@ -39,7 +39,7 @@
             font-size: 30px;
             color: #1e293b;
             letter-spacing: 7px;
-            margin-top: -10px; /* سحب الكلمة للأعلى لتلتصق بالزخرفة */
+            margin-top: -15px; /* رفعنا كلمة GLOBAL قليلاً لتلتصق أكثر بالحرف */
             font-weight: 700;
         }
 
@@ -61,6 +61,12 @@
             display: inline-block;
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
             font-family: 'Cairo', sans-serif;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4);
         }
     </style>
 </head>
