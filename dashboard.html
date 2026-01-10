@@ -17,7 +17,7 @@
         }
         .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 120px; color: var(--primary-red); animation: pulse 2s infinite; }
 
-        /* لوحة التحكم الشاملة */
+        /* لوحة التحكم الشاملة (تظهر فقط بعد التأكد من الهوية) */
         #admin-center { display: none; opacity: 0; transition: opacity 1s ease; padding-bottom: 50px; }
 
         .header { background: #fff; padding: 15px 5%; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
@@ -36,9 +36,12 @@
         .btn-action { 
             width: 100%; padding: 12px; border: 1px solid var(--primary-red); color: var(--primary-red);
             background: transparent; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s;
+            text-align: center; font-family: 'Cairo';
         }
         .btn-action:hover { background: var(--primary-red); color: #fff; }
         .btn-primary { background: var(--primary-red); color: #fff; border: none; }
+
+        .logout-btn { color: #64748b; text-decoration: none; font-size: 14px; cursor: pointer; border: none; background: none; font-family: 'Cairo'; }
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
@@ -55,7 +58,7 @@
         <header class="header">
             <a href="#" class="nav-logo">M</a>
             <div style="font-weight: 700;">مركز الإدارة</div>
-            <a href="index.html" style="color: #64748b; text-decoration: none; font-size: 14px;">تسجيل خروج</a>
+            <button onclick="logout()" class="logout-btn">تسجيل خروج</button>
         </header>
 
         <div class="main-container">
@@ -96,19 +99,51 @@
         </div>
     </div>
 
-    <script>
-        // التحويل التلقائي بعد 5 ثوانٍ
-        setTimeout(function() {
-            const welcome = document.getElementById('welcome-screen');
-            const admin = document.getElementById('admin-center');
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
 
-            welcome.style.opacity = '0';
-            setTimeout(() => {
-                welcome.style.display = 'none';
-                admin.style.display = 'block';
-                setTimeout(() => { admin.style.opacity = '1'; }, 50);
-            }, 800);
-        }, 5000);
+    <script>
+        // إعدادات Firebase الخاصة بك
+        const firebaseConfig = {
+            apiKey: "AIzaSyCDeHg400vEdbUcGuo5RiagIAvh-EV0gLA",
+            authDomain: "m-prime.firebaseapp.com",
+            projectId: "m-prime"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // 1. الحارس البرمجي: التأكد من تسجيل الدخول
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // المستخدم مسجل، نبدأ مؤقت الترحيب
+                startWelcomeTimer();
+            } else {
+                // مستخدم غير مسجل، طرده لصفحة الدخول
+                window.location.href = 'register.html';
+            }
+        });
+
+        // 2. وظيفة الترحيب والتحويل
+        function startWelcomeTimer() {
+            setTimeout(function() {
+                const welcome = document.getElementById('welcome-screen');
+                const admin = document.getElementById('admin-center');
+
+                welcome.style.opacity = '0';
+                setTimeout(() => {
+                    welcome.style.display = 'none';
+                    admin.style.display = 'block';
+                    setTimeout(() => { admin.style.opacity = '1'; }, 50);
+                }, 800);
+            }, 5000); // 5 ثوانٍ
+        }
+
+        // 3. وظيفة تسجيل الخروج
+        function logout() {
+            auth.signOut().then(() => {
+                window.location.href = 'register.html';
+            });
+        }
     </script>
 </body>
 </html>
