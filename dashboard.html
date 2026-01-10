@@ -3,66 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم - M PRIME</title>
+    <title>M PRIME | جاري الدخول</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: #f8fafc; font-family: 'Cairo', sans-serif; color: #1e293b; }
-        .sidebar { background-color: #ffffff; padding: 30px 20px; border-bottom: 2px solid #f1f5f9; text-align: center; }
-        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 50px; color: #FF0000; margin: 0; line-height: 1; }
+        body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
         
-        .welcome-section { max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; }
-        .welcome-card { background: #fff; padding: 40px; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        /* شاشة الترحيب المؤقتة */
+        #welcome-screen { text-align: center; width: 100%; transition: opacity 0.8s ease; }
+        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 100px; color: #FF0000; margin: 0; animation: pulse 2s infinite; }
+        .welcome-msg { font-size: 24px; color: #1e293b; margin-top: 20px; font-weight: 700; opacity: 0; animation: fadeIn 1s forwards 0.5s; }
         
-        h1 { font-size: 28px; margin-bottom: 10px; color: #0f172a; }
-        p { color: #64748b; font-size: 18px; margin-bottom: 30px; }
+        /* لوحة التحكم (مخفية في البداية) */
+        #main-dashboard { display: none; width: 100%; min-height: 100vh; background-color: #f8fafc; opacity: 0; transition: opacity 1s ease; }
+        .header { background: #fff; padding: 15px 20px; border-bottom: 2px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+        .content { max-width: 800px; margin: 40px auto; padding: 20px; }
+        .stat-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+        .price-tag { font-size: 40px; color: #FF0000; font-weight: 700; }
 
-        .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
-        .stat-item { background: #fdfdfd; padding: 20px; border: 1px solid #f1f5f9; border-radius: 16px; transition: 0.3s; }
-        .stat-item:hover { border-color: #FF0000; transform: translateY(-3px); }
-        .stat-label { font-size: 14px; color: #64748b; margin-bottom: 5px; }
-        .stat-value { font-size: 24px; font-weight: 700; color: #FF0000; }
-
-        .action-btn { 
-            display: inline-block; background-color: #FF0000; color: white; padding: 15px 40px; 
-            border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 30px;
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15); transition: 0.3s;
-        }
-
-        /* أنيميشن الظهور التدريجي */
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .animate { animation: fadeIn 0.8s ease forwards; }
     </style>
 </head>
 <body>
 
-    <header class="sidebar animate">
+    <div id="welcome-screen">
         <div class="logo-m">M</div>
-        <div style="font-weight: 700; font-size: 14px; letter-spacing: 2px; color: #1e293b;">PRIME</div>
-    </header>
+        <div class="welcome-msg">مرحباً بك يا شريك النجاح..</div>
+        <div style="margin-top: 15px; color: #64748b;">جاري تحضير متجرك العالمي</div>
+    </div>
 
-    <main class="welcome-section">
-        <div class="welcome-card animate">
-            <h1>مرحباً بك يا شريك النجاح!</h1>
-            <p>لقد انضممت الآن إلى عالم M PRIME، حيث لا حدود لنمو تجارتك.</p>
+    <div id="main-dashboard">
+        <header class="header">
+            <div style="font-family: 'Aref Ruqaa', serif; font-size: 30px; color: #FF0000;">M</div>
+            <div style="font-weight: 700;">لوحة التحكم</div>
+            <a href="index.html" style="text-decoration: none; color: #64748b; font-size: 14px;">خروج</a>
+        </header>
 
-            <div class="status-grid">
-                <div class="stat-item">
-                    <div class="stat-label">حالة المتجر</div>
-                    <div class="stat-value">قيد التجهيز</div>
+        <main class="content">
+            <div class="stat-card">
+                <h2 style="margin-top: 0;">متجرك جاهز للإنطلاق 🚀</h2>
+                <p style="color: #64748b;">ابدأ بإضافة منتجاتك وفتح آفاقك للعالم.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px;">
+                    <div style="background: #fdfdfd; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9;">
+                        <small>المبيعات</small>
+                        <div style="font-size: 20px; font-weight: 700;">0 ر.س</div>
+                    </div>
+                    <div style="background: #fdfdfd; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9;">
+                        <small>العمولة</small>
+                        <div style="font-size: 20px; font-weight: 700; color: #FF0000;">2%</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-label">المبيعات اليوم</div>
-                    <div class="stat-value">0 ريال</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">سياسة العمولة</div>
-                    <div class="stat-value">2%</div>
-                </div>
+                <button style="width: 100%; padding: 15px; background: #FF0000; color: #fff; border: none; border-radius: 12px; margin-top: 25px; font-weight: 700; cursor: pointer;">أضف أول منتج الآن</button>
             </div>
+        </main>
+    </div>
 
-            <a href="#" class="action-btn">أضف منتجك الأول</a>
-        </div>
-    </main>
+    <script>
+        // وظيفة التحويل التلقائي بعد 5 ثوانٍ
+        setTimeout(function() {
+            const welcome = document.getElementById('welcome-screen');
+            const dashboard = document.getElementById('main-dashboard');
+
+            // إخفاء شاشة الترحيب
+            welcome.style.opacity = '0';
+            
+            setTimeout(function() {
+                welcome.style.display = 'none';
+                dashboard.style.display = 'block';
+                // إظهار لوحة التحكم بتلاشي أنيق
+                setTimeout(() => { dashboard.style.opacity = '1'; }, 50);
+            }, 800);
+
+        }, 5000); // 5000 ميلي ثانية تعادل 5 ثوانٍ
+    </script>
 
 </body>
 </html>
