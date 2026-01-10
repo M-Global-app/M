@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M Global</title>
+    <title>M PRIME</title>
     <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #ffffff; /* خلفية بيضاء نقية تماماً */
+            background-color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -22,7 +22,7 @@
             text-align: center;
             width: 95%;
             max-width: 450px;
-            padding-top: 5vh;
+            padding-top: 3vh; /* تقليل بسيط للمساحة العلوية لتوفير مساحة للزرين */
         }
 
         @keyframes fadeUp {
@@ -37,7 +37,7 @@
 
         .logo-m {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 160px; 
+            font-size: 150px; 
             color: #FF0000;
             line-height: 0.8;
             margin: 0;
@@ -46,40 +46,39 @@
         }
 
         .brand-text {
-            font-size: 18px;
+            font-size: 20px;
             color: #1e293b;
-            letter-spacing: 12px;
+            letter-spacing: 14px;
             margin-top: 5px;
             font-weight: 700;
             animation-delay: 0.4s;
+            text-transform: uppercase;
         }
 
         .content-box {
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .main-text {
-            font-size: 22px;
+            font-size: 21px;
             color: #334155;
-            line-height: 1.7;
-            margin-bottom: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .partnership-promise {
-            margin: 20px 0 40px 0;
+            margin: 15px 0 30px 0;
             animation-delay: 1.5s;
         }
 
-        /* تكبير الجملة لتكون واضحة (حجم متوسط ومثالي) */
         .highlight-red {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 38px; 
+            font-size: 36px; 
             color: #FF0000;
             display: block;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        /* لون كلمة "أنتَ" و "نحنُ" لإبراز الشراكة */
         .partner-text {
             color: #0f172a;
             text-decoration: underline;
@@ -87,23 +86,47 @@
             text-decoration-color: rgba(255, 0, 0, 0.4);
         }
 
-        .btn {
-            background-color: #FF0000;
-            color: #ffffff;
-            padding: 18px 80px;
-            border-radius: 10px; /* زوايا شبه حادة */
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 22px;
-            display: inline-block;
-            box-shadow: 0 12px 24px rgba(255, 0, 0, 0.2);
+        /* حاوية الأزرار لتكون تحت بعضها */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px; /* المسافة بين الزرين */
             animation-delay: 1.8s;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
+        .btn {
+            width: 80%; /* توحيد العرض */
+            padding: 16px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s ease;
+        }
+
+        /* زر ابدأ الآن (الأساسي) */
+        .btn-primary {
+            background-color: #FF0000;
+            color: #ffffff;
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.25);
+        }
+
+        /* زر أسعارنا (الشفاف) */
+        .btn-secondary {
+            background-color: transparent;
+            color: #FF0000;
+            border: 2px solid #FF0000;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 0, 0, 0.05);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -111,7 +134,7 @@
 
     <div class="container">
         <div class="logo-m animate">M</div>
-        <div class="brand-text animate">GLOBAL</div>
+        <div class="brand-text animate">PRIME</div>
 
         <div class="content-box">
             <div class="main-text">
@@ -126,7 +149,10 @@
             </div>
         </div>
 
-        <a href="#" class="btn animate">ابدأ الآن مجاناً</a>
+        <div class="btn-group animate">
+            <a href="#" class="btn btn-primary">ابدأ الآن مجاناً</a>
+            <a href="pricing.html" class="btn btn-secondary">أسعارنا</a>
+        </div>
     </div>
 
 </body>
