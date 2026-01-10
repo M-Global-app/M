@@ -3,79 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M PRIME | جاري الدخول</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <title>مركز الإدارة | M PRIME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: #ffffff; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+        :root { --primary-red: #FF0000; --bg-gray: #f8fafc; --text-dark: #1e293b; }
+        body { margin: 0; padding: 0; background-color: var(--bg-gray); font-family: 'Cairo', sans-serif; overflow-x: hidden; }
+
+        /* شاشة الترحيب */
+        #welcome-screen { 
+            position: fixed; inset: 0; background: #fff; z-index: 1000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.8s ease;
+        }
+        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 120px; color: var(--primary-red); animation: pulse 2s infinite; }
+
+        /* لوحة التحكم الشاملة */
+        #admin-center { display: none; opacity: 0; transition: opacity 1s ease; padding-bottom: 50px; }
+
+        .header { background: #fff; padding: 15px 5%; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .nav-logo { font-family: 'Aref Ruqaa', serif; font-size: 35px; color: var(--primary-red); text-decoration: none; }
+
+        .main-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .grid-settings { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+        .card { background: #fff; border-radius: 18px; padding: 25px; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-red); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         
-        /* شاشة الترحيب المؤقتة */
-        #welcome-screen { text-align: center; width: 100%; transition: opacity 0.8s ease; }
-        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 100px; color: #FF0000; margin: 0; animation: pulse 2s infinite; }
-        .welcome-msg { font-size: 24px; color: #1e293b; margin-top: 20px; font-weight: 700; opacity: 0; animation: fadeIn 1s forwards 0.5s; }
-        
-        /* لوحة التحكم (مخفية في البداية) */
-        #main-dashboard { display: none; width: 100%; min-height: 100vh; background-color: #f8fafc; opacity: 0; transition: opacity 1s ease; }
-        .header { background: #fff; padding: 15px 20px; border-bottom: 2px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
-        .content { max-width: 800px; margin: 40px auto; padding: 20px; }
-        .stat-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
-        .price-tag { font-size: 40px; color: #FF0000; font-weight: 700; }
+        .icon-box { font-size: 32px; margin-bottom: 15px; }
+        .card-title { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .card-desc { font-size: 14px; color: #64748b; margin-bottom: 20px; line-height: 1.5; }
+
+        .btn-action { 
+            width: 100%; padding: 12px; border: 1px solid var(--primary-red); color: var(--primary-red);
+            background: transparent; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .btn-action:hover { background: var(--primary-red); color: #fff; }
+        .btn-primary { background: var(--primary-red); color: #fff; border: none; }
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
         <div class="logo-m">M</div>
-        <div class="welcome-msg">مرحباً بك يا شريك النجاح..</div>
-        <div style="margin-top: 15px; color: #64748b;">جاري تحضير متجرك العالمي</div>
+        <h2 style="margin-top:20px;">مرحباً بك يا شريك النجاح</h2>
+        <p style="color: #64748b;">جاري فتح مركز إدارة متجرك...</p>
     </div>
 
-    <div id="main-dashboard">
+    <div id="admin-center">
         <header class="header">
-            <div style="font-family: 'Aref Ruqaa', serif; font-size: 30px; color: #FF0000;">M</div>
-            <div style="font-weight: 700;">لوحة التحكم</div>
-            <a href="index.html" style="text-decoration: none; color: #64748b; font-size: 14px;">خروج</a>
+            <a href="#" class="nav-logo">M</a>
+            <div style="font-weight: 700;">مركز الإدارة</div>
+            <a href="index.html" style="color: #64748b; text-decoration: none; font-size: 14px;">تسجيل خروج</a>
         </header>
 
-        <main class="content">
-            <div class="stat-card">
-                <h2 style="margin-top: 0;">متجرك جاهز للإنطلاق 🚀</h2>
-                <p style="color: #64748b;">ابدأ بإضافة منتجاتك وفتح آفاقك للعالم.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px;">
-                    <div style="background: #fdfdfd; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9;">
-                        <small>المبيعات</small>
-                        <div style="font-size: 20px; font-weight: 700;">0 ر.س</div>
-                    </div>
-                    <div style="background: #fdfdfd; padding: 15px; border-radius: 12px; border: 1px solid #f1f5f9;">
-                        <small>العمولة</small>
-                        <div style="font-size: 20px; font-weight: 700; color: #FF0000;">2%</div>
-                    </div>
-                </div>
-                <button style="width: 100%; padding: 15px; background: #FF0000; color: #fff; border: none; border-radius: 12px; margin-top: 25px; font-weight: 700; cursor: pointer;">أضف أول منتج الآن</button>
+        <div class="main-container">
+            <div style="margin-bottom: 30px;">
+                <h1 style="font-size: 24px;">لوحة التحكم الشاملة</h1>
+                <p style="color: #64748b;">أهلاً بك، كل ما تحتاجه لإدارة متجرك العالمي في مكان واحد.</p>
             </div>
-        </main>
+
+            <div class="grid-settings">
+                <div class="card">
+                    <div class="icon-box">📦</div>
+                    <div class="card-title">إدارة المنتجات</div>
+                    <div class="card-desc">أضف منتجات جديدة، حدث الأسعار، وراقب المخزون الخاص بك.</div>
+                    <button class="btn-action btn-primary">إضافة منتج جديد</button>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box">🎨</div>
+                    <div class="card-title">هوية المتجر</div>
+                    <div class="card-desc">تعديل الشعار، الألوان، واسم المتجر الذي يظهر للعملاء.</div>
+                    <button class="btn-action">تعديل المظهر</button>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box">⚙️</div>
+                    <div class="card-title">إعدادات الحساب</div>
+                    <div class="card-desc">تحديث بياناتك الشخصية، كلمة المرور، وطرق استقبال الأرباح.</div>
+                    <button class="btn-action">إدارة الحساب</button>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box">🚚</div>
+                    <div class="card-title">الشحن والمدفوعات</div>
+                    <div class="card-desc">تفعيل بوابات الدفع وربط شركات الشحن العالمية بمتجرك.</div>
+                    <button class="btn-action">ضبط الإعدادات</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // وظيفة التحويل التلقائي بعد 5 ثوانٍ
+        // التحويل التلقائي بعد 5 ثوانٍ
         setTimeout(function() {
             const welcome = document.getElementById('welcome-screen');
-            const dashboard = document.getElementById('main-dashboard');
+            const admin = document.getElementById('admin-center');
 
-            // إخفاء شاشة الترحيب
             welcome.style.opacity = '0';
-            
-            setTimeout(function() {
+            setTimeout(() => {
                 welcome.style.display = 'none';
-                dashboard.style.display = 'block';
-                // إظهار لوحة التحكم بتلاشي أنيق
-                setTimeout(() => { dashboard.style.opacity = '1'; }, 50);
+                admin.style.display = 'block';
+                setTimeout(() => { admin.style.opacity = '1'; }, 50);
             }, 800);
-
-        }, 5000); // 5000 ميلي ثانية تعادل 5 ثوانٍ
+        }, 5000);
     </script>
-
 </body>
 </html>
