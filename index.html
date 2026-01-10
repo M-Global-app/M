@@ -6,9 +6,9 @@
     <title>M Global</title>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        /* أنيميشن بسيط وسريع لا يسبب ثقلاً */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        /* أنيميشن الظهور الانسيابي */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -27,86 +27,36 @@
         .container {
             text-align: center;
             width: 90%;
-            max-width: 650px;
+            max-width: 600px;
             padding-top: 5vh;
         }
 
-        /* جعل العناصر تظهر تدريجياً */
+        /* تنسيق العناصر */
         .m-logo, .brand, .headline, .offer, .subtext, .btn {
             opacity: 0;
-            animation: fadeIn 0.6s ease-out forwards;
+            animation: fadeInUp 0.7s ease-out forwards;
         }
 
-        /* حرف M - نفس تناسب الصورة التي أعجبتك */
+        /* حرف M - الرومانتيك (مائل ومنساب كما في الصورة 67818) */
         .m-logo {
-            font-size: 135px; /* الحجم الذهبي كما في الصورة */
+            font-size: 140px; 
             color: #FF0000;
             font-style: italic;
             font-weight: 900;
-            line-height: 0.9;
+            line-height: 0.85;
             margin: 0;
-            animation-delay: 0.1s;
+            animation-delay: 0.2s;
         }
 
-        /* كلمة GLOBAL - صغيرة وبعيدة قليلاً */
+        /* كلمة GLOBAL - صغيرة وراقية */
         .brand {
-            font-size: 16px;
-            letter-spacing: 8px;
+            font-size: 17px;
+            letter-spacing: 7px;
             font-weight: 700;
             margin-top: 5px;
             text-transform: uppercase;
-            animation-delay: 0.3s;
+            color: #1e293b;
+            animation-delay: 0.5s;
         }
 
-        .headline {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 40px 0 10px;
-            line-height: 1.4;
-            animation-delay: 0.6s;
-        }
-
-        .offer {
-            font-size: 22px;
-            color: #FF0000;
-            font-weight: 700;
-            margin-bottom: 10px;
-            animation-delay: 0.9s;
-        }
-
-        .subtext {
-            font-size: 18px;
-            color: #64748b;
-            margin-bottom: 70px; /* لإنزال الزر للأسفل */
-            animation-delay: 1.2s;
-        }
-
-        .btn {
-            background-color: #FF0000;
-            color: #ffffff;
-            padding: 16px 80px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 700;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
-            animation-delay: 1.5s;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="m-logo">M</div>
-        <div class="brand">GLOBAL</div>
-        
-        <div class="headline">انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله</div>
-        <div class="offer">لا تدفع لنا حتى تبيع</div>
-        <div class="subtext">نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر</div>
-        
-        <a href="#" class="btn">ابدأ الآن</a>
-    </div>
-
-</body>
-</html>
+        /* النصوص التعريفية */
