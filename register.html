@@ -6,27 +6,28 @@
     <title>M PRIME - الدخول والانضمام</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* التنسيق الجمالي الذي تحبه */
         body { margin: 0; padding: 0; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Cairo', sans-serif; overflow-x: hidden; }
         .container { width: 90%; max-width: 400px; text-align: center; }
-        @keyframes fastFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate { opacity: 0; animation: fastFade 0.4s ease forwards; }
-        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin-bottom: 20px; animation-delay: 0.1s; }
-        .tabs { display: flex; justify-content: center; margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; animation-delay: 0.2s; }
+        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin-bottom: 20px; animation: fastFade 0.4s ease forwards; }
+        .tabs { display: flex; justify-content: center; margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; }
         .tab { padding: 10px 25px; cursor: pointer; font-weight: 700; color: #64748b; transition: 0.3s; font-size: 18px; }
         .tab.active { color: #FF0000; border-bottom: 3px solid #FF0000; } 
         .form-section { display: none; text-align: right; }
         .form-section.active { display: block; } 
         input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 12px; font-family: 'Cairo'; box-sizing: border-box; font-size: 16px; }
-        .btn-main { width: 100%; padding: 15px; border: none; border-radius: 12px; background-color: #FF0000; color: white; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1); }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 0, 0, 0.2); }
-        .back-link { display: block; margin-top: 30px; color: #FF0000; text-decoration: none; font-weight: bold; border-bottom: 2px solid #FF0000; width: fit-content; margin-inline: auto; }
+        .btn-main { width: 100%; padding: 15px; border: none; border-radius: 12px; background-color: #FF0000; color: white; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-2px); }
+        @keyframes fastFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { opacity: 0; animation: fastFade 0.4s ease forwards; }
     </style>
 </head>
 <body> 
 
     <div class="container">
-        <div class="logo-m animate">M</div> 
-        <div class="tabs animate">
+        <div class="logo-m">M</div> 
+
+        <div class="tabs">
             <div class="tab active" onclick="showForm('login', this)">تسجيل الدخول</div>
             <div class="tab" onclick="showForm('register', this)">إنشاء حساب</div>
         </div> 
@@ -34,31 +35,28 @@
         <div id="login-form" class="form-section active">
             <div class="animate"><input type="email" id="login-email" placeholder="البريد الإلكتروني"></div>
             <div class="animate"><input type="password" id="login-pass" placeholder="كلمة المرور"></div>
-            <div class="animate"><button class="btn-main" onclick="handleLogin()">دخول</button></div>
+            <button class="btn-main animate" onclick="handleLogin()">دخول</button>
         </div> 
 
         <div id="register-form" class="form-section">
-            <div class="animate"><input type="text" id="reg-user" placeholder="اسم المستخدم"></div>
+            <div class="animate"><input type="text" placeholder="اسم المتجر"></div>
             <div class="animate"><input type="email" id="reg-email" placeholder="البريد الإلكتروني"></div>
             <div class="animate"><input type="password" id="reg-pass" placeholder="كلمة المرور"></div>
-            <div class="animate"><button class="btn-main" onclick="handleRegister()">إنشاء الحساب</button></div>
+            <button class="btn-main animate" onclick="handleRegister()">إنشاء الحساب</button>
         </div> 
-        <a href="index.html" class="back-link animate">العودة للرئيسية</a>
     </div> 
 
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
 
     <script>
-        // هنا وضعت الكود الذي نسخته أنت من Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyCDeHg400vEdbUcGuo5RiagIAvh-EV0gLA",
             authDomain: "m-prime.firebaseapp.com",
             projectId: "m-prime",
             storageBucket: "m-prime.firebasestorage.app",
             messagingSenderId: "322940347592",
-            appId: "1:322940347592:web:1ff02f01a600ce369d31fd",
-            measurementId: "G-TCHJ9C8LRH"
+            appId: "1:322940347592:web:1ff02f01a600ce369d31fd"
         };
 
         firebase.initializeApp(firebaseConfig);
@@ -69,7 +67,7 @@
             const pass = document.getElementById('reg-pass').value;
             auth.createUserWithEmailAndPassword(email, pass)
                 .then(() => { window.location.href = 'dashboard.html'; })
-                .catch((error) => { alert("خطأ: " + error.message); });
+                .catch((error) => alert(error.message));
         }
 
         function handleLogin() {
@@ -77,7 +75,7 @@
             const pass = document.getElementById('login-pass').value;
             auth.signInWithEmailAndPassword(email, pass)
                 .then(() => { window.location.href = 'dashboard.html'; })
-                .catch((error) => { alert("بيانات الدخول غير صحيحة"); });
+                .catch((error) => alert("بيانات غير صحيحة"));
         }
 
         function showForm(type, element) {
