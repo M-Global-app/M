@@ -3,79 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M PRIME - الدخول والانضمام</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <title>M PRIME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Cairo', sans-serif; }
-        .container { width: 90%; max-width: 400px; text-align: center; }
-        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin-bottom: 20px; }
-        
-        .tabs { display: flex; justify-content: center; margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; }
-        .tab { padding: 10px 25px; cursor: pointer; font-weight: 700; color: #64748b; transition: 0.3s; font-size: 18px; }
-        .tab.active { color: #FF0000; border-bottom: 3px solid #FF0000; }
+        body {
+            margin: 0; padding: 0; background-color: #ffffff;
+            display: flex; justify-content: center; align-items: flex-start;
+            min-height: 100vh; font-family: 'Cairo', sans-serif; overflow-x: hidden;
+        } 
 
-        .form-section { display: none; text-align: right; }
-        .form-section.active { display: block; }
+        .container { text-align: center; width: 95%; max-width: 450px; padding-top: 3vh; } 
 
-        input { 
-            width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #e2e8f0; 
-            border-radius: 12px; font-family: 'Cairo'; box-sizing: border-box; font-size: 16px;
-        }
-        
-        .options-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px; color: #64748b; }
-        .options-row a { color: #FF0000; text-decoration: none; }
+        /* أنيميشن الظهور التدريجي */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        } 
 
-        .btn-main { 
-            width: 100%; padding: 15px; border: none; border-radius: 12px; 
-            background-color: #FF0000; color: white; font-size: 18px; font-weight: 700; 
-            cursor: pointer; transition: 0.3s;
-        }
+        .animate {
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        } 
 
-        .back-link { display: block; margin-top: 30px; color: #FF0000; text-decoration: none; font-weight: bold; border-bottom: 2px solid #FF0000; width: fit-content; margin-inline: auto; }
+        .logo-m {
+            font-family: 'Aref Ruqaa', serif; font-size: 150px; 
+            color: #FF0000; line-height: 0.8; margin: 0;
+            display: block; animation-delay: 0.2s; /* يظهر أولاً */
+        } 
+
+        .brand-text {
+            font-size: 20px; color: #1e293b; letter-spacing: 14px;
+            margin-top: 5px; font-weight: 700; text-transform: uppercase;
+            animation-delay: 0.5s; /* يظهر بعد اللوجو */
+        } 
+
+        .content-box { margin-top: 25px; } 
+
+        .main-text div { margin-bottom: 10px; font-size: 21px; color: #334155; }
+
+        /* توقيت ظهور الأسطر بالتدريج */
+        .line-1 { animation-delay: 1.0s; }
+        .line-2 { animation-delay: 1.5s; }
+        .line-3 { animation-delay: 2.0s; }
+        .promise-1 { animation-delay: 2.8s; }
+        .promise-2 { animation-delay: 3.3s; }
+        .btn-anim { animation-delay: 4.0s; }
+
+        .highlight-black {
+            font-family: 'Aref Ruqaa', serif; font-size: 36px; 
+            color: #0f172a; display: block; line-height: 1.3;
+        } 
+
+        .partner-red {
+            color: #FF0000; text-decoration: underline;
+            text-underline-offset: 8px; text-decoration-color: rgba(255, 0, 0, 0.3);
+        } 
+
+        .btn-group {
+            display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 30px;
+        } 
+
+        .btn {
+            width: 80%; padding: 16px 0; border-radius: 10px;
+            text-decoration: none; font-weight: bold; font-size: 20px; transition: 0.3s ease;
+        } 
+
+        .btn-primary { background-color: #FF0000; color: #ffffff; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15); } 
+        .btn-secondary { background-color: transparent; color: #FF0000; border: 2px solid #FF0000; }
     </style>
 </head>
-<body>
+<body> 
 
     <div class="container">
-        <div class="logo-m">M</div>
+        <div class="logo-m animate">M</div>
+        <div class="brand-text animate">PRIME</div> 
 
-        <div class="tabs">
-            <div class="tab active" onclick="showForm('login', this)">تسجيل الدخول</div>
-            <div class="tab" onclick="showForm('register', this)">إنشاء حساب</div>
-        </div>
-
-        <div id="login-form" class="form-section active">
-            <input type="text" placeholder="اسم المستخدم">
-            <input type="password" placeholder="كلمة المرور">
-            <div class="options-row">
-                <label><input type="checkbox" style="width: auto; margin-inline-end: 5px;"> تذكرني</label>
-                <a href="#">استعادة كلمة المرور؟</a>
+        <div class="content-box">
+            <div class="main-text">
+                <div class="animate line-1">أنشئ متجرك الإلكتروني</div>
+                <div class="animate line-2">بدون رسوم .. بدون قيود</div>
+                <div class="animate line-3">بكل سهولة ويسر</div>
             </div>
-            <button class="btn-main">دخول</button>
-        </div>
-
-        <div id="register-form" class="form-section">
-            <input type="text" placeholder="اسم المستخدم">
-            <input type="text" placeholder="اسم المتجر">
-            <input type="email" placeholder="البريد الإلكتروني">
-            <input type="tel" placeholder="رقم الجوال">
-            <input type="password" placeholder="كلمة المرور">
-            <button class="btn-main">إنشاء الحساب</button>
-        </div>
-
-        <a href="index.html" class="back-link">العودة للرئيسية</a>
-    </div>
-
-    <script>
-        function showForm(type, element) {
-            document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             
-            document.getElementById(type + '-form').classList.add('active');
-            element.classList.add('active');
-        }
-    </script>
+            <div class="partnership-promise" style="margin-top: 20px;">
+                <span class="highlight-black animate promise-1">إذا ربحتَ <span class="partner-red">أنتَ</span>..</span>
+                <span class="highlight-black animate promise-2"><span class="partner-red">نحنُ</span> نربح</span>
+            </div>
+        </div> 
+
+        <div class="btn-group animate btn-anim">
+            <a href="register.html" class="btn btn-primary">ابدأ الآن مجاناً</a>
+            <a href="pricing.html" class="btn btn-secondary">أسعارنا</a>
+        </div>
+    </div> 
 
 </body>
 </html>
-
