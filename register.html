@@ -6,20 +6,34 @@
     <title>M PRIME - الدخول والانضمام</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* التنسيق الجمالي الذي تحبه */
-        body { margin: 0; padding: 0; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Cairo', sans-serif; overflow-x: hidden; }
-        .container { width: 90%; max-width: 400px; text-align: center; }
-        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin-bottom: 20px; animation: fastFade 0.4s ease forwards; }
-        .tabs { display: flex; justify-content: center; margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; }
+        body { margin: 0; padding: 0; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Cairo', sans-serif; overflow: hidden; }
+        .container { width: 90%; max-width: 400px; text-align: center; margin-top: -50px; } /* رفعنا الكتابة للأعلى قليلاً */
+        
+        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin-bottom: 10px; }
+        
+        .tabs { display: flex; justify-content: center; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; }
         .tab { padding: 10px 25px; cursor: pointer; font-weight: 700; color: #64748b; transition: 0.3s; font-size: 18px; }
         .tab.active { color: #FF0000; border-bottom: 3px solid #FF0000; } 
+
         .form-section { display: none; text-align: right; }
         .form-section.active { display: block; } 
-        input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 12px; font-family: 'Cairo'; box-sizing: border-box; font-size: 16px; }
-        .btn-main { width: 100%; padding: 15px; border: none; border-radius: 12px; background-color: #FF0000; color: white; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-2px); }
-        @keyframes fastFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate { opacity: 0; animation: fastFade 0.4s ease forwards; }
+
+        input { 
+            width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #e2e8f0; 
+            border-radius: 12px; font-family: 'Cairo'; box-sizing: border-box; font-size: 15px;
+        }
+
+        .options-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-size: 13px; color: #64748b; }
+        .options-row a { color: #FF0000; text-decoration: none; font-weight: 600; } 
+
+        .btn-main { 
+            width: 100%; padding: 14px; border: none; border-radius: 12px; 
+            background-color: #FF0000; color: white; font-size: 17px; font-weight: 700; 
+            cursor: pointer; transition: 0.3s;
+        }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2); }
+
+        .back-link { display: block; margin-top: 20px; color: #FF0000; text-decoration: none; font-weight: bold; font-size: 14px; }
     </style>
 </head>
 <body> 
@@ -33,17 +47,27 @@
         </div> 
 
         <div id="login-form" class="form-section active">
-            <div class="animate"><input type="email" id="login-email" placeholder="البريد الإلكتروني"></div>
-            <div class="animate"><input type="password" id="login-pass" placeholder="كلمة المرور"></div>
-            <button class="btn-main animate" onclick="handleLogin()">دخول</button>
+            <input type="email" id="login-email" placeholder="البريد الإلكتروني">
+            <input type="password" id="login-pass" placeholder="كلمة المرور">
+            
+            <div class="options-row">
+                <label style="display: flex; align-items: center;">
+                    <input type="checkbox" style="width: auto; margin-bottom: 0; margin-inline-end: 5px;"> تذكرني
+                </label>
+                <a href="#" onclick="alert('سيتم إرسال رابط الاستعادة لإيميلك قريباً')">استعادة كلمة المرور؟</a>
+            </div>
+
+            <button class="btn-main" onclick="handleLogin()">دخول</button>
         </div> 
 
         <div id="register-form" class="form-section">
-            <div class="animate"><input type="text" placeholder="اسم المتجر"></div>
-            <div class="animate"><input type="email" id="reg-email" placeholder="البريد الإلكتروني"></div>
-            <div class="animate"><input type="password" id="reg-pass" placeholder="كلمة المرور"></div>
-            <button class="btn-main animate" onclick="handleRegister()">إنشاء الحساب</button>
+            <input type="text" id="reg-shop" placeholder="اسم المتجر">
+            <input type="email" id="reg-email" placeholder="البريد الإلكتروني">
+            <input type="password" id="reg-pass" placeholder="كلمة المرور">
+            <button class="btn-main" onclick="handleRegister()">إنشاء الحساب</button>
         </div> 
+
+        <a href="index.html" class="back-link">العودة للرئيسية</a>
     </div> 
 
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
@@ -62,20 +86,22 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
 
-        function handleRegister() {
-            const email = document.getElementById('reg-email').value;
-            const pass = document.getElementById('reg-pass').value;
-            auth.createUserWithEmailAndPassword(email, pass)
-                .then(() => { window.location.href = 'dashboard.html'; })
-                .catch((error) => alert(error.message));
-        }
-
         function handleLogin() {
             const email = document.getElementById('login-email').value;
             const pass = document.getElementById('login-pass').value;
+            if(!email || !pass) { alert("أدخل البيانات أولاً"); return; }
             auth.signInWithEmailAndPassword(email, pass)
                 .then(() => { window.location.href = 'dashboard.html'; })
-                .catch((error) => alert("بيانات غير صحيحة"));
+                .catch((err) => alert("بيانات الدخول غير صحيحة"));
+        }
+
+        function handleRegister() {
+            const email = document.getElementById('reg-email').value;
+            const pass = document.getElementById('reg-pass').value;
+            if(!email || !pass) { alert("يرجى ملء كافة الحقول"); return; }
+            auth.createUserWithEmailAndPassword(email, pass)
+                .then(() => { window.location.href = 'dashboard.html'; })
+                .catch((err) => alert("خطأ: " + err.message));
         }
 
         function showForm(type, element) {
