@@ -6,63 +6,39 @@
     <title>أسعار M PRIME</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #ffffff; padding: 20px; color: #1e293b; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header h1 { font-family: 'Aref Ruqaa', serif; color: #FF0000; font-size: 35px; }
-        
-        /* بطاقات الأسعار */
-        .card { border: 2px solid #f1f5f9; border-radius: 15px; padding: 20px; margin-bottom: 20px; max-width: 400px; margin-inline: auto; }
-        .featured { border-color: #FF0000; background-color: #fffafb; }
-        .rec { background: #f1f5f9; padding: 5px 10px; border-radius: 5px; font-size: 13px; margin-bottom: 10px; border-right: 4px solid #cbd5e1; }
-        .featured .rec { border-right-color: #FF0000; background: #fff1f2; }
-        .price { font-size: 30px; font-weight: 700; color: #FF0000; margin: 5px 0; }
-        .benefit { color: #059669; font-weight: bold; margin-top: 10px; }
-
-        /* جدول المقارنة */
-        .compare-table { width: 100%; max-width: 400px; margin: 40px auto; border-collapse: collapse; border: 1px solid #f1f5f9; }
-        th, td { padding: 10px; text-align: center; border: 1px solid #f1f5f9; font-size: 14px; }
-        .m-prime-col { background-color: #fff1f2; color: #FF0000; font-weight: bold; }
-        .savings { background: #FF0000; color: white; padding: 15px; border-radius: 10px; text-align: center; max-width: 400px; margin: 20px auto; }
+        body { margin: 0; padding: 0; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Cairo', sans-serif; }
+        .pricing-box { text-align: center; width: 90%; max-width: 500px; padding: 40px 20px; border: 2px solid #f1f5f9; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin: 0; }
+        .title { font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 30px; }
+        .main-fee { background-color: #fff1f2; padding: 30px 20px; border-radius: 15px; margin-bottom: 25px; border: 1px dashed #FF0000; }
+        .fee-text { font-size: 28px; font-weight: 700; color: #FF0000; line-height: 1.6; }
+        .highlight { display: block; font-size: 35px; text-decoration: underline; margin-top: 10px; }
+        .note { color: #64748b; font-size: 16px; margin-top: 20px; }
+        .back-btn { display: inline-block; margin-top: 30px; color: #FF0000; text-decoration: none; font-weight: bold; border-bottom: 2px solid #FF0000; padding-bottom: 2px; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>باقات M PRIME</h1>
-    </div>
+    <div class="pricing-box">
+        <div class="logo-m">M</div>
+        <div class="title">سياسة التسعير العادلة</div>
+        
+        <div class="main-fee">
+            <div class="fee-text">
+                نأخذ <span class="highlight">2%</span> فقط
+                <br>
+                من إجمالي مبيعاتك شهرياً
+            </div>
+        </div>
 
-    <div class="card">
-        <div class="rec">للمبيعات أقل من 10,000 ريال</div>
-        <div style="font-weight:700;">تاجر مبتدئ</div>
-        <div class="price">2%</div>
-        <div class="benefit">✓ كل المميزات</div>
-    </div>
+        <div class="title" style="color: #0f172a; font-size: 22px;">
+            بحد أقصى <span style="color: #FF0000;">300 ريال</span> شهرياً
+        </div>
 
-    <div class="card">
-        <div class="rec">للمبيعات من 10,000 إلى 50,000 ريال</div>
-        <div style="font-weight:700;">تاجر متوسط</div>
-        <div class="price">1%</div>
-        <div class="benefit">✓ كل المميزات</div>
-    </div>
+        <p class="note">لا رسوم خفية.. لا اشتراكات معقدة.<br>تحصل على كافة المميزات فوراً.</p>
 
-    <div class="card featured">
-        <div class="rec">للمبيعات فوق 50,000 ريال</div>
-        <div style="font-weight:700;">تاجر (اشتراك شهري)</div>
-        <div class="price">200 ر.س</div>
-        <div class="benefit">✓ عمولة 0% + كل المميزات</div>
+        <a href="index.html" class="back-btn">العودة للرئيسية</a>
     </div>
-
-    <div style="text-align:center; margin-top:40px;">
-        <h2 style="font-family:'Aref Ruqaa';">لماذا M PRIME؟</h2>
-        <table class="compare-table">
-            <tr><th>الميزة</th><th class="m-prime-col">M PRIME</th><th>سلة/زد</th></tr>
-            <tr><td>الاشتراك</td><td class="m-prime-col">200 ر.س</td><td>299+ ر.س</td></tr>
-            <tr><td>العمولة</td><td class="m-prime-col">0%</td><td>0%</td></tr>
-        </table>
-        <div class="savings">توفر معنا أكثر من 3,120 ريال سنوياً</div>
-    </div>
-
-    <a href="index.html" style="display:block; text-align:center; margin:30px; color:#FF0000; font-weight:bold; text-decoration:none;">← العودة للرئيسية</a>
 
 </body>
 </html>
