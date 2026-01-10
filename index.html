@@ -3,150 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M PRIME - Fees</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>M Global</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #ffffff;
             margin: 0;
-            padding: 20px;
-            color: #1e293b;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            color: #FF0000;
-            font-size: 26px;
-            margin-bottom: 5px;
-        }
-
-        .header p {
-            color: #64748b;
-            font-size: 16px;
-        }
-
-        /* حاوية البطاقات */
-        .fee-container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: #fff;
-            border: 1.5px solid #f1f5f9;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-        }
-
-        .card-title {
-            font-weight: 700;
-            font-size: 18px;
-            color: #0f172a;
-            margin-bottom: 15px;
+            padding: 0;
+            background-color: #ffffff; /* خلفية بيضاء نقية تماماً */
             display: flex;
-            align-items: center;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 10px;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
         }
 
-        .item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-        }
-
-        .label {
-            font-size: 16px;
-            color: #334155;
-        }
-
-        .value {
-            font-weight: 700;
-            font-size: 18px;
-            color: #FF0000;
-        }
-
-        .badge {
-            background: #fff1f2;
-            color: #FF0000;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .footer-note {
+        .container {
             text-align: center;
-            font-size: 14px;
-            color: #94a3b8;
-            margin-top: 20px;
+            width: 95%;
+            max-width: 450px;
+            padding-top: 5vh;
         }
 
-        .btn-confirm {
-            background-color: #FF0000;
-            color: white;
-            text-align: center;
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .logo-m {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 160px; 
+            color: #FF0000;
+            line-height: 0.8;
+            margin: 0;
             display: block;
-            padding: 18px;
-            border-radius: 10px;
+            animation-delay: 0.2s;
+        }
+
+        .brand-text {
+            font-size: 18px;
+            color: #1e293b;
+            letter-spacing: 12px;
+            margin-top: 5px;
+            font-weight: 700;
+            animation-delay: 0.4s;
+        }
+
+        .content-box {
+            margin-top: 30px;
+        }
+
+        .main-text {
+            font-size: 22px;
+            color: #334155;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .partnership-promise {
+            margin: 20px 0 40px 0;
+            animation-delay: 1.5s;
+        }
+
+        /* تكبير الجملة لتكون واضحة (حجم متوسط ومثالي) */
+        .highlight-red {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 38px; 
+            color: #FF0000;
+            display: block;
+            line-height: 1.4;
+        }
+
+        /* لون كلمة "أنتَ" و "نحنُ" لإبراز الشراكة */
+        .partner-text {
+            color: #0f172a;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .btn {
+            background-color: #FF0000;
+            color: #ffffff;
+            padding: 18px 80px;
+            border-radius: 10px; /* زوايا شبه حادة */
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
-            margin-top: 30px;
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+            font-size: 22px;
+            display: inline-block;
+            box-shadow: 0 12px 24px rgba(255, 0, 0, 0.2);
+            animation-delay: 1.8s;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>رسوم باقة M PRIME</h1>
-        <p>بساطة في الأرقام.. قوة في النتائج</p>
-    </div>
+    <div class="container">
+        <div class="logo-m animate">M</div>
+        <div class="brand-text animate">GLOBAL</div>
 
-    <div class="fee-container">
-        <div class="card">
-            <div class="card-title">الاشتراك الشهري</div>
-            <div class="item">
-                <span class="label">رسوم المنصة</span>
-                <span class="value">99 ر.س <small style="font-size: 12px; color: #94a3b8;">/ شهر</small></span>
+        <div class="content-box">
+            <div class="main-text">
+                <div class="animate" style="animation-delay: 0.7s;">أنشئ متجرك الإلكتروني</div>
+                <div class="animate" style="animation-delay: 1s;">بدون رسوم .. بدون قيود</div>
+                <div class="animate" style="animation-delay: 1.3s;">بكل سهولة ويسر</div>
             </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">رسوم المعاملات (المبيعات)</div>
             
-            <div class="item">
-                <span class="label">بطاقة مدى (Mada)</span>
-                <span class="badge">1% + 1 ر.س</span>
-            </div>
-
-            <div class="item">
-                <span class="label">فيزا / ماستر كارد</span>
-                <span class="badge">2% + 1 ر.س</span>
-            </div>
-
-            <div class="item">
-                <span class="label">Apple Pay</span>
-                <span class="badge">2% + 1 ر.س</span>
+            <div class="partnership-promise animate">
+                <span class="highlight-red">إذا ربحتَ <span class="partner-text">أنتَ</span>..</span>
+                <span class="highlight-red"><span class="partner-text">نحنُ</span> نربح</span>
             </div>
         </div>
 
-        <div class="footer-note">
-            * تطبق هذه الرسوم عند إتمام عملية البيع فقط.
-            <br>
-            إذا ربحتَ أنت.. نحن نربح.
-        </div>
-
-        <a href="#" class="btn-confirm">تفعيل الباقة الآن</a>
+        <a href="#" class="btn animate">ابدأ الآن مجاناً</a>
     </div>
 
 </body>
