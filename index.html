@@ -23,20 +23,13 @@
             padding-top: 2vh; 
         }
 
-        /* تعريف تأثير الظهور الهادئ */
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .animate {
-            opacity: 0; /* مخفي في البداية */
+            opacity: 0;
             animation: fadeUp 0.8s ease forwards;
         }
 
@@ -47,7 +40,7 @@
             line-height: 0.9;
             margin: 0;
             display: block;
-            animation-delay: 0.2s; /* يظهر أولاً */
+            animation-delay: 0.2s;
         }
 
         .brand-text {
@@ -57,7 +50,7 @@
             letter-spacing: 12px;
             margin-top: 10px;
             font-weight: 700;
-            animation-delay: 0.5s; /* يظهر ثانياً */
+            animation-delay: 0.5s;
         }
 
         .content-box {
@@ -82,21 +75,28 @@
             color: #FF0000;
             display: block;
             margin: 15px 0 35px 0;
-            animation-delay: 1.8s; /* العبارة الأهم تظهر أخيراً لترك أثر */
+            animation-delay: 1.8s;
         }
 
         .btn {
             background-color: #FF0000;
             color: #ffffff;
             padding: 18px 65px;
-            border-radius: 50px;
+            /* التعديل هنا: زوايا دائرية شبه حادة */
+            border-radius: 8px; 
             text-decoration: none;
             font-weight: bold;
             font-size: 20px;
             display: inline-block;
-            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
             font-family: 'Cairo', sans-serif;
-            animation-delay: 2.1s; /* الزر يظهر في النهاية */
+            animation-delay: 2.1s;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.3);
         }
     </style>
 </head>
