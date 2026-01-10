@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -25,29 +25,38 @@
 
         .logo-m {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 200px; 
+            font-size: 180px; /* صغرناه قليلاً لترك مساحة للنص الجديد */
             color: #FF0000;
-            line-height: 0.9;
+            line-height: 0.8;
             margin: 0;
             display: block;
-            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.1);
         }
 
         .brand-text {
             font-family: 'Cairo', sans-serif;
-            font-size: 18px; /* تم تصغير الحجم من 30px إلى 18px */
+            font-size: 16px;
             color: #1e293b;
-            letter-spacing: 12px; /* زيادة التباعد لتعويض الحجم الصغير وإعطاء فخامة */
-            margin-top: 10px; /* جعلها تنزل قليلاً بدلاً من -15px */
+            letter-spacing: 12px;
+            margin-top: 10px;
             font-weight: 700;
-            opacity: 0.8; /* جعلها أخف قليلاً لتعطي تركيزاً أكبر على حرف M */
+            opacity: 0.8;
         }
 
-        .slogan {
+        .features-list {
+            font-family: 'Cairo', sans-serif;
+            font-size: 22px;
+            color: #334155;
+            margin: 30px 0;
+            line-height: 1.6;
+        }
+
+        .highlight-red {
+            color: #FF0000;
+            font-weight: 700;
             font-family: 'Aref Ruqaa', serif;
-            font-size: 24px;
-            color: #64748b;
-            margin: 30px 0 40px 0; /* زيادة المسافة العلوية لتناسب التعديلات */
+            font-size: 28px;
+            display: block;
+            margin-top: 10px;
         }
 
         .btn {
@@ -62,6 +71,7 @@
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
             font-family: 'Cairo', sans-serif;
             transition: 0.3s;
+            margin-top: 20px;
         }
 
         .btn:hover {
@@ -75,7 +85,14 @@
     <div class="container">
         <div class="logo-m">M</div>
         <div class="brand-text">GLOBAL</div>
-        <p class="slogan">لا تدفع لنا حتى تبيع!</p>
+
+        <div class="features-list">
+            أنشئ متجرك الإلكتروني<br>
+            بدون رسوم .. بدون قيود<br>
+            بكل سهولة ويسر<br>
+            <span class="highlight-red">لا تدفع لنا حتى تبيع</span>
+        </div>
+
         <a href="#" class="btn">ابدأ الآن</a>
     </div>
 
