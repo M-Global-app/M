@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Alegreya:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            font-family: 'Amiri', serif;
+            font-family: 'Alegreya', serif; /* الخط الموحد للموقع بالكامل */
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -21,68 +21,87 @@
         .container {
             text-align: center;
             width: 90%;
-            max-width: 700px;
+            max-width: 650px;
             padding-top: 5vh;
         }
 
-        /* حرف M - خط أليجيريا (مائل قليلاً ليعطي روح رومانتيك فخمة) */
+        /* حرف M - كبير، أحمر، وبخط اليجيريا المائل (رومانتيك) */
         .m-logo {
-            font-family: 'Alegreya', serif;
-            font-size: 150px; 
+            font-size: 160px;
             color: #FF0000;
-            font-style: italic; /* الميلان هنا يعطي لمسة الرومانسية المطلوبة */
-            line-height: 0.9;
-            margin: 0;
+            font-style: italic;
             font-weight: 900;
+            line-height: 1;
+            margin: 0;
         }
 
-        /* كلمة GLOBAL - خط أليجيريا صغير وأنيق */
+        /* كلمة GLOBAL - صغيرة وأنيقة تحت الحرف مباشرة */
         .brand-name {
-            font-family: 'Alegreya', serif;
-            font-size: 20px; /* تصغير الخط كما طلبت */
+            font-size: 18px;
             letter-spacing: 8px;
-            margin-top: 5px;
             font-weight: 700;
             text-transform: uppercase;
+            margin-top: -10px;
         }
 
-        /* الجمل الجديدة والتنسيق */
-        .main-sentence {
-            font-size: 24px;
+        /* الجملة التعريفية الأولى */
+        .headline {
+            font-size: 26px;
             font-weight: 700;
-            margin: 30px 0 10px 0;
-            line-height: 1.5;
+            margin: 40px 0 15px 0;
+            line-height: 1.4;
         }
 
-        .promise-sentence {
-            font-size: 22px;
-            color: #FF0000; /* تمييزها باللون الأحمر لأنها عرضنا القوي */
+        /* جملة العرض القوية */
+        .offer {
+            font-size: 24px;
+            color: #FF0000;
             font-weight: 700;
             margin-bottom: 15px;
         }
 
-        .sub-sentence {
-            font-size: 18px;
+        /* جملة الدعم والأمان */
+        .subtext {
+            font-size: 20px;
             color: #64748b;
-            margin-bottom: 60px; /* مسافة كبيرة قبل الزر */
-            line-height: 1.6;
+            margin-bottom: 70px; /* لإنزال الزر للأسفل كما طلبت */
+            line-height: 1.5;
         }
 
-        /* الزر المحدث */
+        /* زر ابدأ الآن */
         .btn {
             background-color: #FF0000;
             color: #ffffff;
-            padding: 16px 85px;
+            padding: 18px 90px;
             border-radius: 50px;
             text-decoration: none;
             font-size: 22px;
             font-weight: 700;
             display: inline-block;
-            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
-            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
-    
+    <div class="container">
+        <div class="m-logo">M</div>
+        <div class="brand-name">GLOBAL</div>
+        
+        <div class="headline">
+            انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله
+        </div>
+        
+        <div class="offer">
+            لا تدفع لنا حتى تبيع
+        </div>
+        
+        <div class="subtext">
+            نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر
+        </div>
+        
+        <a href="#" class="btn">ابدأ الآن</a>
+    </div>
+
+</body>
+</html>
