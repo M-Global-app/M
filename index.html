@@ -4,73 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Global</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Pinyon+Script&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Pinyon+Script&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
-        /* أنيميشن ناعم للظهور لضمان عدم حدوث وميض أبيض */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            font-family: 'Amiri', serif;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
-            font-family: 'Amiri', serif; /* الخط العربي الأساسي */
         }
 
         .container {
             text-align: center;
-            width: 100%;
-            padding-top: 8vh;
-            animation: fadeIn 1s ease-in forwards;
+            width: 90%;
+            max-width: 800px;
+            padding-top: 5vh;
+            animation: fadeIn 1.2s ease-out forwards;
         }
 
-        /* الحرف الأيقونة: M الرومانسي */
+        /* حرف M الأيقوني */
         .m-logo {
             font-family: 'Pinyon Script', cursive;
-            font-size: 180px; 
+            font-size: 160px; 
             color: #FF0000;
             line-height: 0.8;
             margin: 0;
-            font-style: normal;
         }
 
-        /* الكلمة العالمية: GLOBAL بـ خط مونتسيرات القوي المستوي */
+        /* GLOBAL القوية */
         .brand-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 30px;
+            font-size: 26px;
             color: #1e293b;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             margin-top: 10px;
             font-weight: 900;
         }
 
-        /* الشعار العربي: بلقيس المستقيم */
-        .slogan {
-            font-family: 'Amiri', serif;
+        /* الجملة الأولى: الوعد التقني */
+        .sub-main {
             font-size: 26px;
-            color: #64748b;
-            margin: 40px 0;
+            color: #1e293b;
             font-weight: 700;
+            margin: 30px 0 10px 0;
+            line-height: 1.6;
         }
 
-        /* الزر: الأحمر الساطع والقوي */
+        /* الجملة الثانية: الأمان العاطفي والمالي */
+        .description {
+            font-size: 20px;
+            color: #64748b;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        /* الزر الأحمر الساطع */
         .btn {
             font-family: 'Montserrat', sans-serif;
             background-color: #FF0000;
             color: #ffffff;
-            padding: 18px 80px;
+            padding: 16px 70px;
             border-radius: 50px;
             text-decoration: none;
             font-size: 20px;
             font-weight: 700;
             display: inline-block;
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -79,7 +91,15 @@
     <div class="container">
         <div class="m-logo">M</div>
         <div class="brand-name">GLOBAL</div>
-        <p class="slogan">لا تدفع لنا حتى تبيع!</p>
+        
+        <div class="sub-main">
+            انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله
+        </div>
+        
+        <div class="description">
+            نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر
+        </div>
+        
         <a href="#" class="btn">ابدأ الآن</a>
     </div>
 
