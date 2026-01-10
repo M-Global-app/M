@@ -31,7 +31,7 @@
             border-radius: 12px; font-family: 'Cairo'; box-sizing: border-box; font-size: 16px;
         }
         
-        /* تأخير بسيط لكل مدخل */
+        /* توقيتات الظهور للحقول */
         .delay-1 { animation-delay: 0.3s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.5s; }
@@ -44,8 +44,9 @@
         .btn-main { 
             width: 100%; padding: 15px; border: none; border-radius: 12px; 
             background-color: #FF0000; color: white; font-size: 18px; font-weight: 700; 
-            cursor: pointer; transition: 0.3s;
-        } 
+            cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+        }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 0, 0, 0.2); }
 
         .back-link { display: block; margin-top: 30px; color: #FF0000; text-decoration: none; font-weight: bold; border-bottom: 2px solid #FF0000; width: fit-content; margin-inline: auto; animation-delay: 0.8s; }
     </style>
@@ -67,7 +68,9 @@
                 <label><input type="checkbox" style="width: auto; margin-inline-end: 5px;"> تذكرني</label>
                 <a href="#">استعادة كلمة المرور؟</a>
             </div>
-            <div class="animate delay-4"><button class="btn-main">دخول</button></div>
+            <div class="animate delay-4">
+                <button class="btn-main" onclick="window.location.href='dashboard.html'">دخول</button>
+            </div>
         </div> 
 
         <div id="register-form" class="form-section">
@@ -76,7 +79,9 @@
             <div class="animate delay-3"><input type="email" placeholder="البريد الإلكتروني"></div>
             <div class="animate delay-4"><input type="tel" placeholder="رقم الجوال"></div>
             <div class="animate delay-5"><input type="password" placeholder="كلمة المرور"></div>
-            <div class="animate delay-5"><button class="btn-main">إنشاء الحساب</button></div>
+            <div class="animate delay-5">
+                <button class="btn-main" onclick="window.location.href='dashboard.html'">إنشاء الحساب</button>
+            </div>
         </div> 
 
         <a href="index.html" class="back-link animate">العودة للرئيسية</a>
@@ -84,18 +89,20 @@
 
     <script>
         function showForm(type, element) {
+            // إخفاء جميع النماذج وإزالة الحالة النشطة من التبويبات
             document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             
+            // إظهار النموذج المختار
             const selectedForm = document.getElementById(type + '-form');
             selectedForm.classList.add('active');
             element.classList.add('active');
 
-            // إعادة تشغيل الأنيميشن عند التبديل
+            // إعادة تشغيل الأنيميشن للعناصر داخل النموذج ليظهر بشكل تدريجي في كل مرة نغير فيها التبويب
             const items = selectedForm.querySelectorAll('.animate');
             items.forEach(item => {
                 item.style.animation = 'none';
-                item.offsetHeight; // Trigger reflow
+                item.offsetHeight; // إعادة تحديث العنصر برمجياً
                 item.style.animation = '';
             });
         }
