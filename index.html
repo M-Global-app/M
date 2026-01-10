@@ -69,20 +69,25 @@
             margin-bottom: 10px;
         }
 
+        /* تنسيق الجملة الجديدة والمطولة */
+        .promise-box {
+            margin: 25px auto 40px auto;
+            max-width: 80%;
+            animation-delay: 1.8s;
+        }
+
         .highlight-red {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 30px;
+            font-size: 32px; /* صغرنا الخط قليلاً لتناسب طول الجملة */
             color: #FF0000;
+            line-height: 1.4;
             display: block;
-            margin: 15px 0 35px 0;
-            animation-delay: 1.8s;
         }
 
         .btn {
             background-color: #FF0000;
             color: #ffffff;
             padding: 18px 65px;
-            /* التعديل هنا: زوايا دائرية شبه حادة */
             border-radius: 8px; 
             text-decoration: none;
             font-weight: bold;
@@ -112,7 +117,13 @@
                 <div class="animate line-2">بدون رسوم .. بدون قيود</div>
                 <div class="animate line-3">بكل سهولة ويسر</div>
             </div>
-            <span class="highlight-red animate">لا تدفع لنا حتى تبيع</span>
+            
+            <div class="promise-box animate">
+                <span class="highlight-red">
+                    حين تربح أنت.. سنربح نحن<br>
+                    وإذا لم تربح، لن نأخذ منك شيئاً
+                </span>
+            </div>
         </div>
 
         <a href="#" class="btn animate">ابدأ الآن</a>
