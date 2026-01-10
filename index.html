@@ -3,29 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M PRIME - منصة التجارة العالمية</title>
+    <title>M PRIME - الدخول والانضمام</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Cairo', sans-serif; text-align: center; color: #1e293b; background-color: #fff; }
-        .hero { padding: 100px 20px; }
-        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 120px; color: #FF0000; margin: 0; line-height: 1; }
-        h1 { font-size: 35px; margin-top: 20px; }
-        p { color: #64748b; font-size: 20px; margin-bottom: 40px; }
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn { display: inline-block; padding: 18px 45px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 18px; transition: 0.3s; }
-        .btn-primary { background: #FF0000; color: white; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2); }
-        .btn-secondary { background: #f1f5f9; color: #1e293b; }
+        body { margin: 0; padding: 0; background-color: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Cairo', sans-serif; }
+        .container { width: 90%; max-width: 400px; text-align: center; }
+        .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 80px; color: #FF0000; margin-bottom: 20px; }
+        
+        /* تبديل بين تسجيل الدخول وإنشاء الحساب */
+        .tabs { display: flex; justify-content: space-around; margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; }
+        .tab { padding: 10px 20px; cursor: pointer; font-weight: 700; color: #64748b; transition: 0.3s; }
+        .tab.active { color: #FF0000; border-bottom: 3px solid #FF0000; }
+
+        input { 
+            width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #e2e8f0; 
+            border-radius: 12px; font-family: 'Cairo'; box-sizing: border-box; font-size: 16px;
+        }
+        
+        .btn-main { 
+            width: 100%; padding: 15px; border: none; border-radius: 12px; 
+            background-color: #FF0000; color: white; font-size: 18px; font-weight: 700; 
+            cursor: pointer; margin-top: 10px;
+        }
+
+        .back-link { display: block; margin-top: 25px; color: #FF0000; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <section class="hero">
+
+    <div class="container">
         <div class="logo-m">M</div>
-        <h1>بكل سهولة ويسر.. متجرك للعالم أجمع</h1>
-        <p>المنصة التي تضمن نجاحك: إذا ربحت أنت.. نحن نربح.</p>
-        <div class="btn-group">
-            <a href="register.html" class="btn btn-primary">ابدأ الآن مجاناً</a>
-            <a href="pricing.html" class="btn btn-secondary">أسعارنا</a>
+
+        <div class="tabs">
+            <div class="tab active">إنشاء حساب</div>
+            <div class="tab">تسجيل الدخول</div>
         </div>
-    </section>
+
+        <div id="register-form">
+            <input type="text" placeholder="اسم المتجر">
+            <input type="tel" placeholder="رقم الجوال">
+            <input type="password" placeholder="كلمة المرور">
+            <button class="btn-main">ابدأ رحلة النجاح</button>
+        </div>
+
+        <a href="index.html" class="back-link">العودة للرئيسية</a>
+    </div>
+
 </body>
 </html>
+
+
+
+
