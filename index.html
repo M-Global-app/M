@@ -20,7 +20,6 @@
         .container {
             text-align: center;
             width: 100%;
-            /* قمنا بتقليل المسافة من 5vh إلى 2vh لرفع الحرف للأعلى */
             padding-top: 2vh; 
         }
 
@@ -36,18 +35,19 @@
 
         .brand-text {
             font-family: 'Cairo', sans-serif;
-            font-size: 30px;
+            font-size: 18px; /* تم تصغير الحجم من 30px إلى 18px */
             color: #1e293b;
-            letter-spacing: 7px;
-            margin-top: -15px; /* رفعنا كلمة GLOBAL قليلاً لتلتصق أكثر بالحرف */
+            letter-spacing: 12px; /* زيادة التباعد لتعويض الحجم الصغير وإعطاء فخامة */
+            margin-top: 10px; /* جعلها تنزل قليلاً بدلاً من -15px */
             font-weight: 700;
+            opacity: 0.8; /* جعلها أخف قليلاً لتعطي تركيزاً أكبر على حرف M */
         }
 
         .slogan {
             font-family: 'Aref Ruqaa', serif;
             font-size: 24px;
             color: #64748b;
-            margin: 15px 0 40px 0;
+            margin: 30px 0 40px 0; /* زيادة المسافة العلوية لتناسب التعديلات */
         }
 
         .btn {
