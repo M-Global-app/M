@@ -7,98 +7,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;900&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
+            margin: 0; padding: 0; background: #fff;
             font-family: 'Alegreya', serif;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            color: #1e293b;
+            display: flex; justify-content: center; align-items: flex-start;
+            min-height: 100vh; color: #1e293b;
         }
-
-        .container {
-            text-align: center;
-            width: 90%;
-            max-width: 600px;
-            padding-top: 5vh;
-        }
-
-        /* حرف M - ضخم ومهيب كما في الصورة الأخيرة */
-        .m-logo {
-            font-size: 155px; 
-            color: #FF0000;
-            font-weight: 900;
-            line-height: 0.8;
-            margin: 0;
-        }
-
-        /* كلمة GLOBAL - متناسقة وأنيقة تحت الحرف */
-        .brand {
-            font-size: 18px;
-            letter-spacing: 9px;
-            font-weight: 700;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-
-        .headline {
-            font-size: 25px;
-            font-weight: 700;
-            margin: 40px 0 10px;
-            line-height: 1.4;
-        }
-
-        /* جملة العرض القوية باللون الأحمر الجاذب */
-        .offer {
-            font-size: 23px;
-            color: #FF0000;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .subtext {
-            font-size: 20px;
-            color: #64748b;
-            margin-bottom: 70px; /* المساحة المطلوبة لراحة العين قبل الزر */
-            line-height: 1.5;
-        }
-
-        /* زر ابدأ الآن - واضح وقوي في الأسفل */
+        .container { text-align: center; width: 90%; max-width: 600px; padding-top: 5vh; }
+        
+        /* شعار M الضخم - مطابق للصورة الأخيرة */
+        .m-logo { font-size: 160px; color: #f00; font-weight: 900; line-height: 0.8; margin: 0; }
+        
+        /* كلمة GLOBAL الأنيقة */
+        .brand { font-size: 18px; letter-spacing: 9px; font-weight: 700; text-transform: uppercase; margin-top: 10px; }
+        
+        /* النصوص التعريفية */
+        .headline { font-size: 25px; font-weight: 700; margin: 40px 0 10px; line-height: 1.4; }
+        .offer { font-size: 23px; color: #f00; font-weight: 700; margin-bottom: 15px; }
+        .subtext { font-size: 20px; color: #64748b; margin-bottom: 80px; } /* مسافة كبيرة للزر */
+        
+        /* الزر الأحمر القوي */
         .btn {
-            background-color: #FF0000;
-            color: #ffffff;
-            padding: 18px 90px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 700;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.25);
+            background: #f00; color: #fff; padding: 18px 95px; border-radius: 50px;
+            text-decoration: none; font-size: 24px; font-weight: 700; display: inline-block;
+            box-shadow: 0 10px 25px rgba(255,0,0,0.25);
         }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="m-logo">M</div>
         <div class="brand">GLOBAL</div>
-        
-        <div class="headline">
-            انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله
-        </div>
-        
-        <div class="offer">
-            لا تدفع لنا حتى تبيع
-        </div>
-        
-        <div class="subtext">
-            نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر
-        </div>
-        
+        <div class="headline">انشئ متجرك الالكتروني بدون رسوم اشتراك، بدون قيود، بكل سهوله</div>
+        <div class="offer">لا تدفع لنا حتى تبيع</div>
+        <div class="subtext">نحن نساعدك لتبدا تجارتك بدون مخاوف او خسائر</div>
         <a href="#" class="btn">ابدأ الآن</a>
     </div>
-
 </body>
 </html>
