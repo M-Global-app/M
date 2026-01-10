@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M PRIME</title>
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <title>M PRIME - منصة التجارة العالمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* --- التنسيق العام --- */
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            font-family: 'Cairo', sans-serif;
-            overflow-x: hidden;
+            margin: 0; padding: 0; background-color: #ffffff;
+            display: flex; justify-content: center; align-items: flex-start;
+            min-height: 100vh; font-family: 'Cairo', sans-serif; overflow-x: hidden;
         }
 
         .container {
-            text-align: center;
-            width: 95%;
-            max-width: 450px;
-            padding-top: 3vh; /* تقليل بسيط للمساحة العلوية لتوفير مساحة للزرين */
+            text-align: center; width: 95%; max-width: 450px; padding-top: 3vh;
         }
 
         @keyframes fadeUp {
@@ -30,104 +22,63 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate {
-            opacity: 0;
-            animation: fadeUp 0.8s ease forwards;
-        }
+        .animate { opacity: 0; animation: fadeUp 0.8s ease forwards; }
 
+        /* --- الشعار والهوية --- */
         .logo-m {
-            font-family: 'Aref Ruqaa', serif;
-            font-size: 150px; 
-            color: #FF0000;
-            line-height: 0.8;
-            margin: 0;
-            display: block;
+            font-family: 'Aref Ruqaa', serif; font-size: 150px; 
+            color: #FF0000; line-height: 0.8; margin: 0; display: block;
             animation-delay: 0.2s;
         }
 
         .brand-text {
-            font-size: 20px;
-            color: #1e293b;
-            letter-spacing: 14px;
-            margin-top: 5px;
-            font-weight: 700;
-            animation-delay: 0.4s;
+            font-size: 20px; color: #1e293b; letter-spacing: 14px;
+            margin-top: 5px; font-weight: 700; animation-delay: 0.4s;
             text-transform: uppercase;
         }
 
-        .content-box {
-            margin-top: 25px;
-        }
-
-        .main-text {
-            font-size: 21px;
-            color: #334155;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .partnership-promise {
-            margin: 15px 0 30px 0;
-            animation-delay: 1.5s;
-        }
-
+        /* --- المحتوى والنصوص --- */
+        .content-box { margin-top: 25px; }
+        .main-text { font-size: 21px; color: #334155; line-height: 1.6; margin-bottom: 20px; }
+        .partnership-promise { margin: 15px 0 30px 0; animation-delay: 1.5s; }
         .highlight-red {
-            font-family: 'Aref Ruqaa', serif;
-            font-size: 36px; 
-            color: #FF0000;
-            display: block;
-            line-height: 1.3;
+            font-family: 'Aref Ruqaa', serif; font-size: 36px; 
+            color: #FF0000; display: block; line-height: 1.3;
         }
-
         .partner-text {
-            color: #0f172a;
-            text-decoration: underline;
-            text-underline-offset: 6px;
+            color: #0f172a; text-decoration: underline; text-underline-offset: 6px;
             text-decoration-color: rgba(255, 0, 0, 0.4);
         }
 
-        /* حاوية الأزرار لتكون تحت بعضها */
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px; /* المسافة بين الزرين */
-            animation-delay: 1.8s;
-        }
-
+        /* --- الأزرار --- */
+        .btn-group { display: flex; flex-direction: column; align-items: center; gap: 12px; animation-delay: 1.8s; }
         .btn {
-            width: 80%; /* توحيد العرض */
-            padding: 16px 0;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 20px;
-            transition: 0.3s ease;
+            width: 80%; padding: 16px 0; border-radius: 10px;
+            text-decoration: none; font-weight: bold; font-size: 20px; transition: 0.3s ease; cursor: pointer;
+        }
+        .btn-primary { background-color: #FF0000; color: #ffffff; border: none; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15); }
+        .btn-secondary { background-color: transparent; color: #FF0000; border: 2px solid #FF0000; }
+
+        /* --- نافذة الأسعار (Overlay) --- */
+        .pricing-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000; display: none; overflow-y: auto; padding: 20px;
         }
 
-        /* زر ابدأ الآن (الأساسي) */
-        .btn-primary {
-            background-color: #FF0000;
-            color: #ffffff;
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);
+        .close-pricing {
+            position: absolute; top: 20px; left: 20px; font-size: 30px;
+            color: #FF0000; cursor: pointer; font-weight: bold;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.25);
+        .price-card {
+            border: 2px solid #f1f5f9; border-radius: 15px; padding: 20px;
+            margin-bottom: 20px; max-width: 400px; margin-inline: auto; text-align: right;
         }
-
-        /* زر أسعارنا (الشفاف) */
-        .btn-secondary {
-            background-color: transparent;
-            color: #FF0000;
-            border: 2px solid #FF0000;
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 0, 0, 0.05);
-            transform: translateY(-2px);
-        }
+        .featured { border-color: #FF0000; background-color: #fffafb; }
+        .price-value { font-size: 28px; font-weight: 700; color: #FF0000; }
+        .features-list { list-style: none; padding: 0; margin: 15px 0; font-size: 15px; }
+        .features-list li::before { content: "✓ "; color: #FF0000; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -142,18 +93,25 @@
                 <div class="animate" style="animation-delay: 1s;">بدون رسوم .. بدون قيود</div>
                 <div class="animate" style="animation-delay: 1.3s;">بكل سهولة ويسر</div>
             </div>
-            
             <div class="partnership-promise animate">
-                <span class="highlight-red">إذا ربحتَ <span class="partner-text">أنتَ</span>..</span>
-                <span class="highlight-red"><span class="partner-text">نحنُ</span> نربح</span>
+                <span class="highlight-red">إذا ربحتَ <span class="partner-text">أنتَ</span>.. نحنُ نربح</span>
             </div>
         </div>
 
         <div class="btn-group animate">
             <a href="#" class="btn btn-primary">ابدأ الآن مجاناً</a>
-            <a href="pricing.html" class="btn btn-secondary">أسعارنا</a>
+            <button onclick="openPricing()" class="btn btn-secondary">أسعارنا</button>
         </div>
     </div>
 
-</body>
-</html>
+    <div id="pricingModal" class="pricing-overlay">
+        <span class="close-pricing" onclick="closePricing()">&times; إغلاق</span>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <h2 style="font-family: 'Aref Ruqaa', serif; color: #FF0000; font-size: 35px;">باقات M PRIME</h2>
+            <p>شفافية مطلقة في الرسوم</p>
+        </div>
+
+        <div class="price-card">
+            <div style="font-weight:700; font-size:20px;">تاجر مبتدئ</div>
+            <div class="price
