@@ -17,7 +17,7 @@
         }
         .logo-m { font-family: 'Aref Ruqaa', serif; font-size: 120px; color: var(--primary-red); animation: pulse 2s infinite; }
 
-        /* لوحة التحكم الشاملة (تظهر فقط بعد التأكد من الهوية) */
+        /* لوحة التحكم الشاملة */
         #admin-center { display: none; opacity: 0; transition: opacity 1s ease; padding-bottom: 50px; }
 
         .header { background: #fff; padding: 15px 5%; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
@@ -36,7 +36,7 @@
         .btn-action { 
             width: 100%; padding: 12px; border: 1px solid var(--primary-red); color: var(--primary-red);
             background: transparent; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s;
-            text-align: center; font-family: 'Cairo';
+            text-align: center; font-family: 'Cairo'; text-decoration: none; display: block;
         }
         .btn-action:hover { background: var(--primary-red); color: #fff; }
         .btn-primary { background: var(--primary-red); color: #fff; border: none; }
@@ -72,7 +72,7 @@
                     <div class="icon-box">📦</div>
                     <div class="card-title">إدارة المنتجات</div>
                     <div class="card-desc">أضف منتجات جديدة، حدث الأسعار، وراقب المخزون الخاص بك.</div>
-                    <button class="btn-action btn-primary">إضافة منتج جديد</button>
+                    <button onclick="addNewProduct()" class="btn-action btn-primary">إضافة منتج جديد</button>
                 </div>
 
                 <div class="card">
@@ -101,6 +101,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
     <script>
         // إعدادات Firebase الخاصة بك
@@ -111,34 +112,88 @@
         };
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // بيانات Cloudinary الخاصة بك
+        const CLOUD_NAME = "dzxkqvp36"; 
+        const UPLOAD_PRESET = "mprime_upload"; 
 
         // 1. الحارس البرمجي: التأكد من تسجيل الدخول
         auth.onAuthStateChanged((user) => {
             if (user) {
-                // المستخدم مسجل، نبدأ مؤقت الترحيب
                 startWelcomeTimer();
             } else {
-                // مستخدم غير مسجل، طرده لصفحة الدخول
                 window.location.href = 'register.html';
             }
         });
 
-        // 2. وظيفة الترحيب والتحويل
+        // 2. وظيفة الترحيب
         function startWelcomeTimer() {
             setTimeout(function() {
-                const welcome = document.getElementById('welcome-screen');
-                const admin = document.getElementById('admin-center');
-
-                welcome.style.opacity = '0';
+                document.getElementById('welcome-screen').style.opacity = '0';
                 setTimeout(() => {
-                    welcome.style.display = 'none';
-                    admin.style.display = 'block';
-                    setTimeout(() => { admin.style.opacity = '1'; }, 50);
+                    document.getElementById('welcome-screen').style.display = 'none';
+                    document.getElementById('admin-center').style.display = 'block';
+                    setTimeout(() => { document.getElementById('admin-center').style.opacity = '1'; }, 50);
                 }, 800);
-            }, 5000); // 5 ثوانٍ
+            }, 3000); // قللت الوقت لـ 3 ثوانٍ لراحة التاجر
         }
 
-        // 3. وظيفة تسجيل الخروج
+        // 3. المحرك السحري: إضافة منتج مع رفع صورة
+        async function addNewProduct() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+
+            fileInput.onchange = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                // تغيير نص الزر مؤقتاً لإظهار جاري الرفع
+                const btn = document.querySelector('.btn-primary');
+                const originalText = btn.innerText;
+                btn.innerText = "جاري رفع الصورة... ⏳";
+                btn.disabled = true;
+
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('upload_preset', UPLOAD_PRESET);
+
+                try {
+                    // الرفع إلى Cloudinary
+                    const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await res.json();
+                    const imageUrl = data.secure_url;
+
+                    // طلب البيانات من التاجر
+                    const name = prompt("أدخل اسم المنتج الجديد:");
+                    const price = prompt("أدخل السعر (بالريال):");
+
+                    if (name && price) {
+                        const user = auth.currentUser;
+                        await db.collection("products").add({
+                            merchantId: user.uid,
+                            productName: name,
+                            productPrice: price,
+                            productImage: imageUrl,
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                        alert("ممتاز! تم إضافة المنتج وصورته بنجاح 🚀");
+                    }
+                } catch (err) {
+                    alert("عذراً، حدث خطأ: " + err.message);
+                } finally {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
+            };
+            fileInput.click();
+        }
+
+        // 4. تسجيل الخروج
         function logout() {
             auth.signOut().then(() => {
                 window.location.href = 'register.html';
